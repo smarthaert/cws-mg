@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title="__MSG_title__" screenshot="__MSG_screenshot__" thumbnail="__MSG_thumbnail__" description="Description: __MSG_description__  How to Play: __MSG_howtoplay__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="1100">
+    <Require feature="opensocial-0.8" />
+    <Require feature="views" />
+    <Require feature="dynamic-height" />
+    <Locale lang="all">
+        <msg name="title">39 [ DressUp | Make-Up | Girls Games ]</msg>
+        <msg name="gameTitle">Afternoon Coffee Dress Up</msg>
+        <msg name="description">Get set for a double-shot of foamy fashion flair! </msg>
+		<msg name="howtoplay">Browse the fashion, accessory, and background options to create the perfect latte-sipping look for this coffee-loving cutie.</msg>
+        <msg name="gameSource">http://www8.agame.com/mirror/flash/a/AfternoonCoffeeDressUp/AfternoonCoffeeDressUp.swf</msg>
+        <msg name="screenshot">http://www.agame.com/200x120/3/4/150634.jpg</msg>
+        <msg name="thumbnail">http://www.agame.com/200x120/3/4/150634.jpg</msg>
+        
+        <msg name="new">New</msg>
+        <msg name="favorites">Favorites</msg>
+        <msg name="myfriends">My Friends</msg>
+        <msg name="gotoPage">Ask me if I want to go to last game I played</msg>
+        <msg name="settingsupdates">Automatically post updates for my friends</msg>
+        <msg name="appwidth">Application width: 950px</msg>
+        <msg name="help">help</msg>
+        <msg name="DressUp">DressUp</msg>
+        <msg name="MakeUp">Make-Up</msg>
+        <msg name="MakeOver">MakeOver</msg>
+        <msg name="play">Play</msg>
+        <msg name="settings">settings</msg>
+        <msg name="game">Game</msg>
+        <msg name="madalingames">Madalin Games</msg>
+        <msg name="back">Back</msg>
+        <msg name="games">Games</msg>
+        <msg name="action">Action</msg>
+        <msg name="adventure">Adventure</msg>
+        <msg name="Physics">Physics</msg>
+        <msg name="Racing">Racing</msg>
+        <msg name="Sports">Sports</msg>
+        <msg name="TowerDefense">Tower Defense</msg>
+        <msg name="puzzle">Puzzle</msg>
+        <msg name="puzzShort">Puzzle</msg>
+        <msg name="skill">Skill</msg>
+        <msg name="skillgames">Skill Games</msg>
+        <msg name="girls">Girls Games</msg>
+        <msg name="girlsgames">Girls Games</msg>
+        <msg name="girlsshort">Girls</msg>
+        <msg name="boysgames">Boys Games</msg>
+        <msg name="othercateg">Other</msg>
+        <msg name="isplaying">is playing</msg>
+        <msg name="madalingames02">madalin games</msg>
+        <msg name="gamesapps">games apps</msg>
+        <msg name="categories">categories</msg>
+        <msg name="posttoupdates">post to updates</msg>
+        <msg name="initialText">Switch Theme</msg>
+        <msg name="buttonPreText">Theme:</msg>
+        <msg name="home">Home</msg>
+        <msg name="relatedgames">other games</msg>
+        <msg name="dialogtitle">Load last played game?</msg>
+        <msg name="dialogtext">Do you want to load the last game you played?</msg>
+        <msg name="sendmessage">Send a message</msg>
+        <msg name="messageTitle">Invite message</msg>
+        <msg name="messageBody">Hey! do you want to try this app , it's way awesome!</msg>
+        <msg name="updateposted">Update posted to my friends.</msg>
+        <msg name="lastgame">Load last played game on startup</msg>
+    </Locale>
+    <Locale lang="pt">
+        <msg name="title">39 [ Vestir | Maquiar | Meninas Jogos ]</msg>
+        <msg name="gameTitle">Dress Up – Café da Tarde</msg>
+        <msg name="description">Arrume-se para uma xícara de café com muita classe! </msg>
+		<msg name="howtoplay">Explore as opções de moda, acessórios e imagens de fundo, criando um ambiente perfeito de degustação para esta adorável amante de café.</msg>
+        
+        <msg name="new">Novo</msg>
+        <msg name="favorites">Favoritos</msg>
+        <msg name="myfriends">Meus Amigos</msg>
+        <msg name="gotoPage">Pergunte-me se quero ir ao passado jogado jogo</msg>
+        <msg name="settingsupdates">Automaticamente postar atualizações para os meus amigos</msg>
+        <msg name="appwidth">Aplicativo largura: 950px</msg>
+        <msg name="help">ajuda</msg>
+        <msg name="DressUp">Vestir</msg>
+        <msg name="MakeUp">Maquiar</msg>
+        <msg name="MakeOver">Decoração</msg>
+        <msg name="play">Jogar</msg>
+        <msg name="settings">configurações</msg>
+        <msg name="game">Jogo</msg>
+        <msg name="madalingames">Madalin Jogos</msg>
+        <msg name="back">Atrás</msg>
+        <msg name="games">Jogos</msg>
+        <msg name="action">Ação</msg>
+        <msg name="adventure">Aventura</msg>
+        <msg name="Physics">Física</msg>
+        <msg name="Racing">Corrida</msg>
+        <msg name="Sports">Esportes</msg>
+        <msg name="TowerDefense">Defender a Torre</msg>
+        <msg name="puzzle">Quebra-cabeça</msg>
+        <msg name="puzzShort">Quebra-c..</msg>
+        <msg name="skill">Habili..</msg>
+        <msg name="skillgames">Habilidade</msg>
+        <msg name="girls">Meninas</msg>
+        <msg name="girlsgames">Meninas Jogos</msg>
+        <msg name="girlsshort">Meninas</msg>
+        <msg name="boysgames">Meninos</msg>
+        <msg name="othercateg">Outros</msg>
+        <msg name="isplaying">está jogar</msg>
+        <msg name="madalingames02">madalin jogos</msg>
+        <msg name="gamesapps">jogos apps</msg>
+        <msg name="categories">categorias</msg>
+        <msg name="posttoupdates">postar atualizações</msg>
+        <msg name="initialText">Alterar o Tema</msg>
+        <msg name="buttonPreText">Tema:</msg>
+        <msg name="home">Início</msg>
+        <msg name="relatedgames">outros jogos</msg>
+        <msg name="dialogtitle">Carga passado jogado jogo?</msg>
+        <msg name="dialogtext">Quer carga passado jogado jogo?</msg>
+        <msg name="sendmessage">Enviar uma mensagem</msg>
+        <msg name="messageTitle">Convidar mensagem</msg>
+        <msg name="messageBody">Hey! você quer tentar esse aplicativo , é incrível!</msg>
+        <msg name="updateposted">Atualização postado para os meus amigos.</msg>
+        <msg name="lastgame">Carga passado jogado jogo</msg>
+    </Locale>
+</ModulePrefs>
+<Content type="html" view="canvas" preferred_width="950">
+<![CDATA[
+<!--ALm6fM3roznci1EAj3sWw3aAxKHeAo/Fh3DO3NqEUQSe4ANKJNdf1SWzbeABAABvqzVIgJIyF3GdcQ6vRbtAxej0IIcbfBZSV4Po93w5HbNtDdlcOaBYx8YpluW/VOTWTIsk4v33KgyvvPHmIdi3xaMbY8c9HprgQZ5Qc7mkQ9CWuseg5I2CPZDi1IiCT/AhP0svbAt/bL2U-->
+<!DOCTYPE html>
+<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="http://hosting.gmodules.com/ig/gadgets/file/111449154365250772461/superfish.css" />
+<style type="text/css">
+    body {  margin:0; padding:0; font-size:10px; }
+    #nav-bar {  height:35px; font-family: arial,sans-serif; font-size:12px; }
+    #app-container {  width:835px; margin:auto; }
+    #container {  padding:5px; text-align:center; margin:auto; }
+    
+    #top-ad-div {  text-align:center; margin-top:5px; }
+    
+    #gamediv-wrapper {  text-align:center; margin-top:10px; }
+    #gametable { width:100%; text-align:center; border:border-collapse; border:0; margin:auto; }
+    #gametd {  height:600px; width:100%; text-align:center; vertical-align:middle; }
+    .embedgame {  display:block; width:100%;height:100%; margin:auto; border:0; }
+    .iframegame { display:block;width:100%;height:100%;margin:auto;border:none;box-sizing: border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; }
+    #game-description { text-align:left; margin-top:5px; padding:12px; padding-left:20px; }
+    .game-title {  display:block; font-weight:bold;margin-bottom:5px; }
+    .title-link { text-decoration:none; }
+    .title-link:hover { text-decoration:underline; color:#00C; }
+    
+    .game-description {  display:block; }
+    
+    #tabs { margin:auto; margin-top:10px; height:725px; border:0; text-align:center; padding:0; background-image:none;}
+    #tabs-ul li { font-size:11px; }
+    
+    .innertabs-ul li { font-size:9px;}
+    
+    ul.games-ul  {  list-style-type: none; margin: 0; margin-top:15px; width:820px; margin-left:auto; margin-right:auto; padding: 0; }
+    
+    ul#favorites-ul  {  list-style-type: none; margin: 0; margin-top:20px; width:810px; margin-left:auto; margin-right:auto; padding: 0; }
+    
+    li.placeholder  {  width: 140px; height:135px; }
+    li.games-li  {  margin:0; margin-left:11px; padding: 5px; float: left; width: 112px; height:112px; }
+    
+    .game-newwin { display:block; height:0px; width:16px; position:relative; top:1px; left:88px; }
+    .ui-icon-newwin { border:1px solid transparent; }
+    .ui-icon-newwin:hover { border:1px solid #4534B6; background-color:#fff; }
+    
+    li.fav-li  {  margin:0; margin-left:32px; padding: 5px; float: left; width: 112px; height:120px; }
+    
+    .ui-draggable-dragging  {  list-style-type: none; margin: 0; padding: 0;  }
+    .ui-icon-trash:hover  {  cursor: pointer; }
+    #fav-help  {  position:relative; bottom:20px; left:140px; width:16px; height:16px; cursor:pointer; }
+    
+    #tabs h3 { text-align:left;}
+    
+    .title-div { width:100px; text-align:center; margin:auto; margin-top:2px; }
+    .thumb { display:block; width:100px; height:75px; margin:auto; cursor:pointer; border:1px solid transparent; }
+    .thumb:hover {  border:1px solid #4534B6;  }
+    
+    #adsdiv { margin-top:5px;  padding:0.5em; }
+    #adstable { margin-left:auto; margin-right:auto; border:border-collapse; border:0; margin-top:10px; margin-bottom:8px; }
+    #adstable td { width:360px; }
+    #settings-dialog {  display:none;  }
+    #inner-set-div { text-align:left; padding:50px; }
+    .settings-checkbox {  margin:7px;  }
+    .settings-label {  position:relative; bottom:2px;  }
+    #update-confirm-dialog {  padding:20px; text-align:center;  }
+    #message-confirm-dialog {  padding:20px; text-align:center;  }
+    #dialog-confirm {  display:none;  }
+    #dialog-title-div {  text-align:center; margin-top:20px; margin-bottom:20px;  }
+    
+    #friends-div-wrapper {  text-align:center; margin-top:2px; text-align:left; padding:5px;  }
+    #friendsdiv {  height:480px; padding-left:10px; overflow:auto;  }
+    .friend-list {  list-style:none;  }
+    .friend-div {  padding:5px; height:150px; width:130px; float:left;  }
+    
+    .profile-anchor:link {  display:block; text-decoration:none;  }
+    .profile-anchor:visited {  display:block; text-decoration:none;  }
+    .profile-anchor:hover {  display:block; text-decoration:underline;  }
+    .profile-anchor:active {  display:block; text-decoration:underline;  }
+    
+    .thumb-wrapper-div {  width:64px; height:64px; overflow:hidden;  }
+    .friend-thumb {  display:block; border:0;  }
+    .friend-display-name {  display:block; font-size:9px; margin-top:2px; }
+    
+    
+    .div-friend-links { text-align:left; margin-top:8px; }
+    
+    .friend-links { display:block; text-align:left; margin-top:3px; }
+    .friend-links:link {   text-decoration:none;  }
+    .friend-links:visited {   text-decoration:none;  }
+    .friend-links:hover {   text-decoration:underline;  }
+    .friend-links:active {   text-decoration:underline;  }
+    
+    .friend-links-text { font-size:9px; }
+    
+    .ui-icon-person { float:left;position:relative;top:-1px;height:14px; }
+    .ui-icon-mail-closed { float:left;position:relative;top:-1px;height:14px; }
+
+</style>
+<div class="ui-widget ui-corner-all" id="app-container">
+  <div id="nav-bar">
+    <ul class="sf-menu">
+      <li><a class="ret-false" id="app-settings" href="#"><span class="ui-icon ui-icon-wrench" style="float:left;position:relative;top:-2px;"></span>&nbsp;__MSG_settings__</a></li>
+      <li><a class="ret-false app-refresh" href="#"><span class="ui-icon ui-icon-refresh" style="float:left;position:relative;top:-1px;left:1px;"></span>&nbsp;</a></li>
+      <li><a class="ret-false" id="help" href="#"><span class="ui-icon ui-icon-help" style="float:left;position:relative;top:-1px;"></span>&nbsp;</a></li>
+      <li><a class="ret-false" href="#"><g:plusone size="small"></g:plusone></a></li>
+    </ul>
+  </div>
+  <div id="container" class="ui-widget-content ui-corner-all">
+    <div id="top-ad-div">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-9990175436387830";
+        /* dmg-series-Top */
+        google_ad_slot = "5734192388";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+    <div id="gamediv-wrapper" class="ui-tabs">
+      <ul>
+        <li><a href="#game-tab"><span class="ui-icon ui-icon-close" style="float:left;position:relative;top:-1px;"></span>close&nbsp;</a></li>
+      </ul>
+      <div id="game-tab">
+      <table id="gametable" border="0" cellpadding="0" cellspacing="0">
+        <tbody><tr><td id="gametd"></td></tr></tbody></table>
+        <span class="ui-icon ui-icon-grip-dotted-horizontal" style="margin:0px auto;"></span>
+      </div>
+    </div>
+    <div class="ui-widget-content ui-corner-all" id="game-description">
+      <span class="game-title"></span>
+      <span class="game-description"></span>
+    </div>
+    <div id="adsdiv" class="ui-widget-content ui-corner-all">
+            <table id='adstable' cellspacing="0">
+				<tbody>
+				<tr>
+				<td style="width:320px;">
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-9990175436387830";
+                    /* dmg-series-Left */
+                    google_ad_slot = "8140974428";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+				</td>
+				<td style="width:320px;">
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-9990175436387830";
+                    /* dmg-series-Right */
+                    google_ad_slot = "4516797806";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+				</td>
+				<td style="width:148px;">
+    				<div style="width:130px;padding:4px 0 3px 0;background-color:#fff;margin:auto;">
+        				<a href="http://gan.doubleclick.net/gan_click?lid=41000000031469072&pubid=21000000000339673"><img     src="http://gan.doubleclick.net/gan_impression?lid=41000000031469072&pubid=21000000000339673" border=0 alt="Get Unlimited Access to Hundreds of Games"></a>
+    				</div>
+				</td>
+				</tr>
+				</tbody>
+            </table>
+    </div>
+    <div class="ui-tabs" id="tabs">
+      <ul id="tabs-ul">
+        <li><a href="#tabs-1">__MSG_DressUp__ | __MSG_MakeUp__ | __MSG_MakeOver__</a></li>
+        <li><a href="#tabs-2">__MSG_girls__</a></li>
+        <li><a href="#favorites"><span class="ui-icon ui-icon-heart" style="float:left;position:relative;top:-2px;height:13px;"></span>&nbsp;__MSG_favorites__&nbsp;</a></li>
+      </ul>
+      <div class="ui-tabs-hide" id="tabs-1">
+        <div class="ui-tabs" id="innertabs01">
+          <ul class="innertabs-ul">
+            <li><a href="#innertabs01-1">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-2">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-3">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-4">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-5">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-6">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-7">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-08">__MSG_DressUp__</a></li>
+            <li><a href="#innertabs01-8">__MSG_MakeUp__</a></li>
+            <li><a href="#innertabs01-9">__MSG_MakeUp__</a></li>
+            <li><a href="#innertabs01-10">__MSG_MakeUp__</a></li>
+            <li><a href="#innertabs01-11">__MSG_MakeOver__</a></li>
+            <li><a href="#innertabs01-12">__MSG_MakeOver__</a></li>
+            <li><a href="#innertabs01-13">__MSG_MakeOver__</a></li>
+          </ul>
+          <div class="ui-tabs-hide" id="innertabs01-1"></div>
+          <div class="ui-tabs-hide" id="innertabs01-2"></div>
+          <div class="ui-tabs-hide" id="innertabs01-3"></div>
+          <div class="ui-tabs-hide" id="innertabs01-4"></div>
+          <div class="ui-tabs-hide" id="innertabs01-5"></div>
+          <div class="ui-tabs-hide" id="innertabs01-6"></div>
+          <div class="ui-tabs-hide" id="innertabs01-7"></div>
+          <div class="ui-tabs-hide" id="innertabs01-08"></div>
+          <div class="ui-tabs-hide" id="innertabs01-8"></div>
+          <div class="ui-tabs-hide" id="innertabs01-9"></div>
+          <div class="ui-tabs-hide" id="innertabs01-10"></div>
+          <div class="ui-tabs-hide" id="innertabs01-11"></div>
+          <div class="ui-tabs-hide" id="innertabs01-12"></div>
+          <div class="ui-tabs-hide" id="innertabs01-13"></div>
+        </div>
+      </div>
+      <div class="ui-tabs-hide" id="tabs-2">
+        <div class="ui-tabs" id="innertabs02">
+          <ul class="innertabs-ul">
+            <li><a href="#innertabs02-1">__MSG_girlsshort__ 1</a></li>
+            <li><a href="#innertabs02-2">__MSG_girlsshort__ 2</a></li>
+            <li><a href="#innertabs02-3">__MSG_girlsshort__ 3</a></li>
+            <li><a href="#innertabs02-4">__MSG_girlsshort__ 4</a></li>
+            <li><a href="#innertabs02-5">__MSG_girlsshort__ 5</a></li>
+            <li><a href="#innertabs02-6">__MSG_girlsshort__ 6</a></li>
+            <li><a href="#innertabs02-7">__MSG_girlsshort__ 7</a></li>
+            <li><a href="#innertabs02-8">__MSG_girlsshort__ 8</a></li>
+            <li><a href="#innertabs02-9">__MSG_girlsshort__ 9</a></li>
+            <li><a href="#innertabs02-10">__MSG_girlsshort__ 10</a></li>
+          </ul>
+          <div class="ui-tabs-hide" id="innertabs02-1"></div>
+          <div class="ui-tabs-hide" id="innertabs02-2"></div>
+          <div class="ui-tabs-hide" id="innertabs02-3"></div>
+          <div class="ui-tabs-hide" id="innertabs02-4"></div>
+          <div class="ui-tabs-hide" id="innertabs02-5"></div>
+          <div class="ui-tabs-hide" id="innertabs02-6"></div>
+          <div class="ui-tabs-hide" id="innertabs02-7"></div>
+          <div class="ui-tabs-hide" id="innertabs02-8"></div>
+          <div class="ui-tabs-hide" id="innertabs02-9"></div>
+          <div class="ui-tabs-hide" id="innertabs02-10"></div>
+        </div>
+      </div>
+      <div class="ui-tabs-hide" id="favorites">
+        <ul id="favorites-ul" class="connectedSortable ui-helper-reset">
+          <li class="placeholder"><span>Add your favorite games here.</span><div class="ui-widget-content ui-corner-all" id="fav-help"><span class="ui-icon ui-icon-help"></span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ui-widget-content ui-corner-all" id="friends-div-wrapper">
+      <div id="friendsdiv">Loading...</div>
+    </div>
+  </div>
+  <div id="settings-dialog">
+    <div id="inner-set-div">
+      <div class="ui-widget-content ui-corner-all" id="themeswitcher-div" style="width:152px;margin-bottom:10px;"></div>
+        <form>
+          <input class="settings-checkbox" type="checkbox" name="appwidth" value="appwidth" id="checkbox-01" /><span class="settings-label">__MSG_appwidth__</span> <br>
+          <input class="settings-checkbox" type="checkbox" name="updates" value="updates" id="checkbox-02" /><span class="settings-label">__MSG_settingsupdates__</span> <br>
+          <input class="settings-checkbox" type="checkbox" name="loadgame" value="loadgame" id="checkbox-03" /><span class="settings-label">__MSG_lastgame__</span> <br>
+          <input class="settings-checkbox" type="checkbox" name="gotoPage" value="gotoPage" id="checkbox-04" /><span class="settings-label">__MSG_gotoPage__</span>
+        </form>
+    </div>
+  </div>
+  <div id="fav-help-dialog"></div>
+  <div id="please-remove-dialog">
+    <span style="display:block;text-align:center;margin-top:20px;margin-bottom:15px;">Game not added.<br>&nbsp;<br>Please first remove a game to add another one.</span>
+  </div>
+  <div id="update-confirm-dialog"></div>
+  <div id="message-confirm-dialog"></div>
+  <div id="dialog-confirm" title="__MSG_dialogtitle__">
+    <span style="display:block;text-align:center;margin-top:10px;margin-bottom:10px;"><span class="ui-icon ui-icon-circle-check" style="float:left;position:relative;top:-1px;left:10px;"></span>__MSG_dialogtext__</span>
+    <div id="dialog-title-div"></div>
+  </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://hosting.gmodules.com/ig/gadgets/file/111449154365250772461/jQuery-plugins-and-scripts.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+function loadDefaultGame() {
+  var title, description, gameSource;
+  
+  title = "__MSG_gameTitle__";
+  description = "__MSG_description__";
+  
+  $('#gametd').html('<embed class="embedgame" src="__MSG_gameSource__" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
+  
+  $('.game-title').html('<a class="title-link" href="__MSG_gameSource__" target="_blank">' + title + '</a>');
+  $('.game-description').html("<b>Description:</b>&nbsp;__MSG_description__ <br><b>How to Play:</b>&nbsp;__MSG_howtoplay__");
+  
+  $('#game-tab').height(600);
+  $('#gametd').height(600);
+}
+
+$(function(){
+    $('#themeswitcher-div').themeswitcher({
+        initialText: '__MSG_initialText__',
+        buttonPreText: '__MSG_buttonPreText__ ',
+        loadTheme: 'Blitzer'
+      });
+});
+</script>
+
+<script src="http://madalin-games.googlecode.com/svn/trunk/cat/dmg/js/HTML-fn-scr-dress-series.js" type="text/javascript"></script>
+
+<script src="http://hosting.gmodules.com/ig/gadgets/file/105248247525528779537/settings-jquery-themeswitcher.js" type="text/javascript"></script>
+<script src="http://hosting.gmodules.com/ig/gadgets/file/111449154365250772461/jquery-cookie.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+function postActivity(title, body){
+  var urlParams = gadgets.util.getUrlParameters();
+  var appParent = urlParams['parent'];
+  var appAppID = urlParams['gadgetId'];
+  
+  var title = '__MSG_isplaying__ <strong>__MSG_title__</strong>';
+  
+  var body = "<table style='border:border-collapse; border:0;text-align:center;margin-left:30px;' cellspacing='0' cellpadding='0'> <tr><td style='width:120px;'> <a style='display:block;' href='" + appParent + "/Application?appId=" + appAppID + "'><img style='display:block;margin:auto;' src='__MSG_thumbnail__' /></a> </td><td style='width:160px;'> <a href='" + appParent + "/Application?appId=" + appAppID + "'><div style='width:25%;font-size:13px;font-weight:bold;padding:5px 20px;text-align:center;border:1px solid #ccc;margin:auto;'>__MSG_play__</div> </a></td></tr> </table>";
+    
+  var params = {};
+  params[opensocial.Activity.Field.TITLE] = title;  
+  params[opensocial.Activity.Field.BODY] = body;
+    var activity = opensocial.newActivity(params);
+    opensocial.requestCreateActivity(activity, opensocial.CreateActivityPriority.HIGH, activityCallback);
+}
+function activityCallback(data) {
+  var updateMessage = data.hadError()  ?  '' : '__MSG_updateposted__';
+  $( "#update-confirm-dialog" ).html(updateMessage);
+
+  if ( updateMessage === '__MSG_updateposted__' ) {
+    $( "#update-confirm-dialog" ).dialog( "open" );
+    setTimeout('$( "#update-confirm-dialog" ).dialog( "close" )' , 2000);
+  }
+}
+</script>
+<script type="text/javascript">
+  window.___gcfg = {lang: 'pt-BR'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23521479-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+  ]]>
+</Content>
+</Module>
