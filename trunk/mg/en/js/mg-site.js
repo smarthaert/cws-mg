@@ -5070,7 +5070,7 @@ $(function () {
             show: 'fade',
             hide: 'slide',
             width: 840,
-            position: [ 'center', 206 ]
+            position: [ 'center', 112 ]
          });
     
 	$( "#please-remove-dialog" ).dialog({
