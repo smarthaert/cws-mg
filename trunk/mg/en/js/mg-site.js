@@ -303,9 +303,14 @@
         
         checkbox01UserPref();
         
-        $( "#gamediv-wrapper" ).dialog('open');
+        var urlParams = gadgets.util.getUrlParameters();
+        var swf = urlParams['swf'];
         
-        $('#gametd').html('<embed class="embedgame" src="'+ swf +'" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
+        if ( swf !== "home" ) {
+            $( "#gamediv-wrapper" ).dialog('open');
+            
+            $('#gametd').html('<embed class="embedgame" src="'+ swf +'" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
+        }
     }
     function checkbox02UserPref() {
         
