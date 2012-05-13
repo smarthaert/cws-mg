@@ -226,7 +226,7 @@
         </div>
         <div id="nav-bar">
             <ul class="sf-menu ui-widget-content">
-              <li class="ui-state-default"><a class="ret-false" id="app-settings" href="#"><span class="ui-icon ui-icon-gear" style="float:left;position:relative;top:-2px;"></span>&nbsp;config</a></li>
+              <li class="ui-state-default"><a class="ret-false" id="app-settings" href="#"><span class="ui-icon ui-icon-gear" style="float:left;position:relative;top:-2px;"></span>&nbsp;config&nbsp;</a></li>
               <li class="ui-state-default"><a class="ret-false" id="open-embed-dialog" href="#">&nbsp;&lt;&#47; embed &gt;</a></li>
               <li class="parent-li ui-state-default"><a class="ret-false" id="play-my-game" href="#"><span class="ui-icon ui-icon-star" style="float:left;position:relative;top:-1px;"></span>&nbsp;__MSG_mygame__</a>
                   <ul class="second-ul">
