@@ -227,12 +227,12 @@
         <div id="nav-bar">
             <ul class="sf-menu ui-widget-content">
               <li class="ui-state-default"><a class="ret-false" id="app-settings" href="#"><span class="ui-icon ui-icon-gear" style="float:left;position:relative;top:-2px;"></span>&nbsp;config</a></li>
-              <li class="ui-state-default"><a class="ret-false" id="open-embed-dialog" href="#">&lt;&#47; embed &gt;</a></li>
               <li class="parent-li ui-state-default"><a class="ret-false" id="play-my-game" href="#"><span class="ui-icon ui-icon-star" style="float:left;position:relative;top:-1px;"></span>&nbsp;__MSG_mygame__</a>
                   <ul class="second-ul">
                     <li class="ui-state-default"><a class="ret-false" id="open-dialog-form" href="#">__MSG_addgame__</a></li>
                   </ul>
               </li>
+              <li class="ui-state-default"><a class="ret-false" id="open-embed-dialog" href="#">&lt;&#47; embed &gt;</a></li>
             </ul>
         </div>
         <div id="searchForm-container"><!--  search box from http://thefinishedbox.com/freebies/scripts/jquery-animated-search/  -->
