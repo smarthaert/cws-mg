@@ -203,6 +203,18 @@
         saveLastGame();
         
     }
+    
+    function openEmbedDialog() {
+        
+        $( "#embed-dialog" ).dialog({
+            height: 200,
+            width: 450,
+            modal: true,
+            resizable: false,
+            position: ['center', 100]
+        });
+    }
+    
     function openMyGameDialog() {
         $('#gamediv-wrapper').css({ visibility: 'hidden' });
         $('#gameswf').val("");
@@ -5136,6 +5148,13 @@ $(function () {
             }
         });
     //
+    
+    $("#open-embed-dialog").on('click', function () {
+            openMyGameDialog();
+        });
+    //
+    
+    
     $("#open-dialog-form").on('click', function () {
             openMyGameDialog();
         });
