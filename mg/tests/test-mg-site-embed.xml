@@ -530,6 +530,7 @@
                 </div>
             </div>
             <div id="fav-help-dialog"></div>
+            <div id="embed-dialog"></div>
             <div id="please-remove-dialog">
                 <span style="display:block;text-align:center;margin-top:20px;margin-bottom:15px;">Game NOT added.<br>&nbsp;<br>Please first remove a game to add another one.</span>
             </div>
