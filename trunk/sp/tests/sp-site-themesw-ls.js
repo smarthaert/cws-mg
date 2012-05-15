@@ -2,7 +2,7 @@
 ---------------------------------------------------------------------*/
 $.fn.themeswitcher = function(settings){
   var options = jQuery.extend({
-    loadTheme: 'UI lightness',
+    loadTheme: 'Redmond',
     initialText: 'Alterar o tema',
     width: 150,
     height: 200,
