@@ -8,6 +8,34 @@
     var gadgetId = urlParams['gadgetId'];
     var swf = urlParams['swf'];
     
+    var language = urlParams['lang'];
+    
+    var langCountry;
+    
+    
+    if (language === 'pt') {
+        langCountry = "pt-BR";
+    } else if (language === 'en') {
+        langCountry = "en-US";
+    } else if (language === 'fr') {
+        langCountry = "fr-FR";
+    } else if (language === 'de') {
+        langCountry = "de-DE";
+    } else if (language === 'it') {
+        langCountry = "it-IT";
+    } else if (language === 'nl') {
+        langCountry = "nl-NL";
+    } else if (language === 'pl') {
+        langCountry = "pl-PL";
+    } else if (language === 'es') {
+        langCountry = "es-ES";
+    } else if (language === 'sv') {
+        langCountry = "sv-SE";
+    } else {
+        langCountry = "en-US";
+    }
+    
+    
     var __LANG_initialText__ , __LANG_buttonPreText__ , __LANG_settings__;
 
     if (language === 'pt') {
@@ -600,7 +628,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(recommendation%3A%3E%3D4)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=0&lang="+ langCountry +"&tsize=2&limit=100&format=json";
         gadgets.io.makeRequest(MY_URL, callback011, params);
         
     }
@@ -608,7 +636,7 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback011(page_index, jq){
                     
@@ -622,10 +650,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
