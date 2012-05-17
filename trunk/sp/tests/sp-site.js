@@ -504,19 +504,6 @@
         else if((selected === 1)&&(selected02 === 1)){	Innertabs022();	}
         else if((selected === 1)&&(selected02 === 2)){	Innertabs023();	}
         else if((selected === 1)&&(selected02 === 3)){	Innertabs024();	}
-        else if((selected === 1)&&(selected02 === 4)){	Innertabs025();	}
-        else if((selected === 1)&&(selected02 === 5)){	Innertabs026();	}
-        else if((selected === 1)&&(selected02 === 6)){	Innertabs027();	}
-        else if((selected === 1)&&(selected02 === 7)){	Innertabs028();	}
-        else if((selected === 1)&&(selected02 === 8)){	Innertabs029();	}
-        else if((selected === 1)&&(selected02 === 9)){	Innertabs0210();	}
-        else if((selected === 1)&&(selected02 === 10)){	Innertabs0211();	}
-        else if((selected === 1)&&(selected02 === 11)){	Innertabs0212();	}
-        else if((selected === 1)&&(selected02 === 12)){	Innertabs0213();	}
-        else if((selected === 1)&&(selected02 === 13)){	Innertabs0214();	}
-        else if((selected === 1)&&(selected02 === 14)){	Innertabs0215();	}
-        else if((selected === 1)&&(selected02 === 15)){	Innertabs0216();	}
-        else if((selected === 1)&&(selected02 === 16)){	Innertabs0217();	}
     }
     function loadHtmlInnertabs03() {
         var $tabs = $('#tabs').tabs();
@@ -623,7 +610,7 @@
     
                 function pageselectCallback011(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -650,7 +637,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback011, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback011, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -665,7 +652,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=3&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback021, params);
         
     }
@@ -673,11 +660,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback021(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -687,10 +674,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -705,7 +691,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback021, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback021, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -714,7 +700,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=47&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback022, params);
         
     }
@@ -722,11 +708,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback022(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -736,10 +722,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -754,7 +739,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback022, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback022, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -763,7 +748,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=18&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback023, params);
         
     }
@@ -771,11 +756,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback023(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -785,10 +770,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -803,7 +787,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback023, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback023, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -812,7 +796,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=53&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback024, params);
         
     }
@@ -820,11 +804,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback024(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -834,10 +818,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -852,644 +835,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback024, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs025(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=3200";
-        gadgets.io.makeRequest(MY_URL, callback025, params);
-        
-    }
-        function callback025(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback025(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-5').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback025, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs026(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4000";
-        gadgets.io.makeRequest(MY_URL, callback026, params);
-        
-    }
-        function callback026(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback026(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-6').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback026, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs027(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4800";
-        gadgets.io.makeRequest(MY_URL, callback027, params);
-        
-    }
-        function callback027(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback027(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-7').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback027, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs028(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=5600";
-        gadgets.io.makeRequest(MY_URL, callback028, params);
-        
-    }
-        function callback028(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback028(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-8').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback028, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs029(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=6400";
-        gadgets.io.makeRequest(MY_URL, callback029, params);
-        
-    }
-        function callback029(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback029(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-9').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback029, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0210(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=7200";
-        gadgets.io.makeRequest(MY_URL, callback0210, params);
-        
-    }
-        function callback0210(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0210(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-10').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0210, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0211(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Apuzzles)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=8000";
-        gadgets.io.makeRequest(MY_URL, callback0211, params);
-        
-    }
-        function callback0211(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0211(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-11').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0211, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0212(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0212, params);
-        
-    }
-        function callback0212(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0212(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-12').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0212, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0213(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback0213, params);                                                                   
-        
-    }
-        function callback0213(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0213(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-13').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0213, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0214(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
-        gadgets.io.makeRequest(MY_URL, callback0214, params);
-        
-    }
-        function callback0214(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0214(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-14').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0214, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0215(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
-        gadgets.io.makeRequest(MY_URL, callback0215, params);
-        
-    }
-        function callback0215(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0215(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-15').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0215, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0216(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=3200";
-        gadgets.io.makeRequest(MY_URL, callback0216, params);
-        
-    }
-        function callback0216(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0216(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-16').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0216, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0217(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ajigsaw)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4000";
-        gadgets.io.makeRequest(MY_URL, callback0217, params);
-        
-    }
-        function callback0217(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0217(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs02-17').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0217, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback024, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -4014,19 +3360,6 @@ $(function () {
         $('#innertabs02 ul li a:eq(1)').on('click', function() {	Innertabs022();	});
         $('#innertabs02 ul li a:eq(2)').on('click', function() {	Innertabs023();	});
         $('#innertabs02 ul li a:eq(3)').on('click', function() {	Innertabs024();	});
-        $('#innertabs02 ul li a:eq(4)').on('click', function() {	Innertabs025();	});
-        $('#innertabs02 ul li a:eq(5)').on('click', function() {	Innertabs026();	});
-        $('#innertabs02 ul li a:eq(6)').on('click', function() {	Innertabs027();	});
-        $('#innertabs02 ul li a:eq(7)').on('click', function() {	Innertabs028();	});
-        $('#innertabs02 ul li a:eq(8)').on('click', function() {	Innertabs029();	});
-        $('#innertabs02 ul li a:eq(9)').on('click', function() {	Innertabs0210();	});
-        $('#innertabs02 ul li a:eq(10)').on('click', function() {	Innertabs0211();	});
-        $('#innertabs02 ul li a:eq(11)').on('click', function() {	Innertabs0212();	});
-        $('#innertabs02 ul li a:eq(12)').on('click', function() {	Innertabs0213();	});
-        $('#innertabs02 ul li a:eq(13)').on('click', function() {	Innertabs0214();	});
-        $('#innertabs02 ul li a:eq(14)').on('click', function() {	Innertabs0215();	});
-        $('#innertabs02 ul li a:eq(15)').on('click', function() {	Innertabs0216();	});
-        $('#innertabs02 ul li a:eq(16)').on('click', function() {	Innertabs0217();	});
         
 	  //
         
@@ -4257,7 +3590,7 @@ $(function () {
 			width: 300,
 			hide: 'fade',
 			show: 'fade',
-			position: [ 'center', 400 ],
+			position: [ 'center', 300 ],
 			buttons: {
 				Ok: function() {
 					$( this ).dialog( "close" );
@@ -4359,7 +3692,7 @@ $(function () {
                 var historyObj = $('#history-ul > li');
                 var historyliArray = $.makeArray(historyObj);
     
-                if ( historyliArray.length > 24 ) {
+                if ( historyliArray.length > 20 ) {
                     $('#history-ul > li:last').remove();
                 }
                 updateHistory();
@@ -4383,9 +3716,9 @@ $(function () {
                 var favoritesObj = $('#favorites-ul > li');
                 var favoritesliArray = $.makeArray(favoritesObj);
                 
-                if ( favoritesliArray.length < 25 ) {
+                if ( favoritesliArray.length < 21 ) {
                     $(this).parent('.games-li').effect('transfer', { to: '#favorites-ul-li', className: 'ui-effects-transfer' }, 500);
-                } else if ( favoritesliArray.length > 24 ) {
+                } else if ( favoritesliArray.length > 20 ) {
                     $('#favorites-ul > li:first').remove();
                     $( "#please-remove-dialog" ).dialog( "open" );
                 }
@@ -4421,7 +3754,7 @@ $(function () {
 				var obj = $('#favorites-ul > li');
 				var liArray = $.makeArray(obj);
 	
-				if ( liArray.length > 24 ) {
+				if ( liArray.length > 20 ) {
 					$('#favorites-ul > li:first').remove();
 					$( "#please-remove-dialog" ).dialog( "open" );
 				}

@@ -264,7 +264,7 @@
           <div class="ui-tabs-hide" id="tabs-1">
             <div class="ui-tabs innertabs" id="innertabs01">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs01-1">1</a></li>
+                <li><a href="#innertabs01-1">*</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs01-1"></div>
@@ -278,38 +278,12 @@
                 <li><a href="#innertabs02-2">2</a></li>
                 <li><a href="#innertabs02-3">3</a></li>
                 <li><a href="#innertabs02-4">4</a></li>
-                <li><a href="#innertabs02-5">5</a></li>
-                <li><a href="#innertabs02-6">6</a></li>
-                <li><a href="#innertabs02-7">7</a></li>
-                <li><a href="#innertabs02-8">8</a></li>
-                <li><a href="#innertabs02-9">9</a></li>
-                <li><a href="#innertabs02-10">10</a></li>
-                <li><a href="#innertabs02-11">11</a></li>
-                <li><a href="#innertabs02-12">12</a></li>
-                <li><a href="#innertabs02-13">13</a></li>
-                <li><a href="#innertabs02-14">14</a></li>
-                <li><a href="#innertabs02-15">15</a></li>
-                <li><a href="#innertabs02-16">16</a></li>
-                <li><a href="#innertabs02-17">17</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs02-1"></div>
                   <div class="ui-tabs-hide" id="innertabs02-2"></div>
                   <div class="ui-tabs-hide" id="innertabs02-3"></div>
                   <div class="ui-tabs-hide" id="innertabs02-4"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-5"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-6"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-7"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-8"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-9"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-10"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-11"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-12"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-13"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-14"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-15"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-16"></div>
-                  <div class="ui-tabs-hide" id="innertabs02-17"></div>
               <!-- /divs -->
             </div>
           </div>
