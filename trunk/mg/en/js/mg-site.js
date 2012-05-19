@@ -187,6 +187,8 @@
     }
     function loadMyGameUserPref() {
         
+        $( "#gamediv-wrapper" ).dialog('open');
+        
         var myGameURLUserPref = localStorage.getItem("mygame-"+gadgetId);
         
         $('#gametd').html('<embed class="embedgame" id="game" src="'+ myGameURLUserPref +'" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
@@ -195,6 +197,8 @@
         
     }
     function loadMyGame() {
+        
+        $( "#gamediv-wrapper" ).dialog('open');
         
         var myGameURL = $('#gameswf').val();
         
