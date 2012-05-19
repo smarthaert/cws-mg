@@ -214,7 +214,7 @@
         var language = urlParams['lang'];
         var country = urlParams['country'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:140px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fmg%2Fen%2Fjs%2Fmg-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=101570238869037372979&swf='+swf+'" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fmg%2Fen%2Fjs%2Fmg-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=101570238869037372979&swf='+swf+'" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
