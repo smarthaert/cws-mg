@@ -274,37 +274,32 @@
           <div class="ui-tabs-hide" id="tabs-2">
             <div class="ui-tabs innertabs" id="innertabs02">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs02-1">1</a></li>
-                <li><a href="#innertabs02-2">2</a></li>
-                <li><a href="#innertabs02-3">3</a></li>
-                <li><a href="#innertabs02-4">4</a></li>
+                <li><a href="#innertabs02-1">__MSG_puzzle__</a></li>
+                <li><a href="#innertabs02-2">__MSG_skillgames__</a></li>
+                <li><a href="#innertabs02-3">simulation games</a></li>
+                <li><a href="#innertabs02-4">time management</a></li>
+                <li><a href="#innertabs02-5">hidden objects</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs02-1"></div>
                   <div class="ui-tabs-hide" id="innertabs02-2"></div>
                   <div class="ui-tabs-hide" id="innertabs02-3"></div>
                   <div class="ui-tabs-hide" id="innertabs02-4"></div>
+                  <div class="ui-tabs-hide" id="innertabs02-5"></div>
               <!-- /divs -->
             </div>
           </div>
           <div class="ui-tabs-hide" id="tabs-3">
             <div class="ui-tabs innertabs" id="innertabs03">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs03-1">__MSG_DressUp__ | 1</a></li>
-                <li><a href="#innertabs03-2">2</a></li>
-                <li><a href="#innertabs03-3">3</a></li>
-                <li><a href="#innertabs03-4">4</a></li>
-                <li><a href="#innertabs03-5">5</a></li>
-                <li><a href="#innertabs03-6">6</a></li>
-                <li><a href="#innertabs03-7">7</a></li>
-                <li><a href="#innertabs03-8">8</a></li>
-                <li><a href="#innertabs03-9">9</a></li>
-                <li><a href="#innertabs03-10">10</a></li>
-                <li><a href="#innertabs03-11">11</a></li>
-                <li><a href="#innertabs03-12">__MSG_MakeUp__ | 1</a></li>
-                <li><a href="#innertabs03-13">2</a></li>
-                <li><a href="#innertabs03-14">__MSG_MakeOver__ | 1</a></li>
-                <li><a href="#innertabs03-15">2</a></li>
+                <li><a href="#innertabs03-1">__MSG_girls__</a></li>
+                <li><a href="#innertabs03-2">__MSG_DressUp__</a></li>
+                <li><a href="#innertabs03-3">__MSG_MakeUp__</a></li>
+                <li><a href="#innertabs03-4">__MSG_MakeOver__</a></li>
+                <li><a href="#innertabs03-5">celebrity games</a></li>
+                <li><a href="#innertabs03-6">animal games</a></li>
+                <li><a href="#innertabs03-7">simulation games</a></li>
+                <li><a href="#innertabs03-8">fun games</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs03-1"></div>
@@ -315,59 +310,36 @@
                   <div class="ui-tabs-hide" id="innertabs03-6"></div>
                   <div class="ui-tabs-hide" id="innertabs03-7"></div>
                   <div class="ui-tabs-hide" id="innertabs03-8"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-9"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-10"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-11"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-12"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-13"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-14"></div>
-                  <div class="ui-tabs-hide" id="innertabs03-15"></div>
               <!-- /divs -->
             </div>
           </div>
           <div class="ui-tabs-hide" id="tabs-4">
             <div class="ui-tabs innertabs" id="innertabs04">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs04-1">__MSG_action__ | 1</a></li>
-                <li><a href="#innertabs04-2">2</a></li>
-                <li><a href="#innertabs04-3">3</a></li>
-                <li><a href="#innertabs04-4">4</a></li>
-                <li><a href="#innertabs04-5">5</a></li>
-                <li><a href="#innertabs04-6">6</a></li>
-                <li><a href="#innertabs04-7">7</a></li>
-                <li><a href="#innertabs04-8">__MSG_adventure__ | 1</a></li>
-                <li><a href="#innertabs04-9">2</a></li>
-                <li><a href="#innertabs04-10">3</a></li>
+                <li><a href="#innertabs04-1">__MSG_action__</a></li>
+                <li><a href="#innertabs04-2">__MSG_adventure__</a></li>
+                <li><a href="#innertabs04-3">__MSG_shooting__</a></li>
+                <li><a href="#innertabs04-4">__MSG_Physics__</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs04-1"></div>
                   <div class="ui-tabs-hide" id="innertabs04-2"></div>
                   <div class="ui-tabs-hide" id="innertabs04-3"></div>
                   <div class="ui-tabs-hide" id="innertabs04-4"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-5"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-6"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-7"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-8"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-9"></div>
-                  <div class="ui-tabs-hide" id="innertabs04-10"></div>
               <!-- /divs -->
             </div>
           </div>
           <div class="ui-tabs-hide" id="tabs-5">
             <div class="ui-tabs innertabs" id="innertabs05">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs05-1">__MSG_driving__ | 1</a></li>
-                <li><a href="#innertabs05-2">2</a></li>
-                <li><a href="#innertabs05-3">__MSG_shooting__ | 1</a></li>
-                <li><a href="#innertabs05-4">2</a></li>
-                <li><a href="#innertabs05-5">3</a></li>
-                <li><a href="#innertabs05-6">4</a></li>
-                <li><a href="#innertabs05-7">5</a></li>
-                <li><a href="#innertabs05-8">__MSG_strategy__ | 1</a></li>
-                <li><a href="#innertabs05-9">2</a></li>
-                <li><a href="#innertabs05-10">__MSG_Sports__ | 1</a></li>
-                <li><a href="#innertabs05-11">2</a></li>
-                <li><a href="#innertabs05-12">__MSG_fighting__</a></li>
+                <li><a href="#innertabs05-1">__MSG_action__</a></li>
+                <li><a href="#innertabs05-2">__MSG_adventure__</a></li>
+                <li><a href="#innertabs05-3">__MSG_shooting__</a></li>
+                <li><a href="#innertabs05-4">__MSG_driving__</a></li>
+                <li><a href="#innertabs05-5">__MSG_Sports__</a></li>
+                <li><a href="#innertabs05-6">__MSG_Physics__</a></li>
+                <li><a href="#innertabs05-7">__MSG_TowerDefense__</a></li>
+                <li><a href="#innertabs05-8">uphill racing</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs05-1"></div>
@@ -378,26 +350,20 @@
                   <div class="ui-tabs-hide" id="innertabs05-6"></div>
                   <div class="ui-tabs-hide" id="innertabs05-7"></div>
                   <div class="ui-tabs-hide" id="innertabs05-8"></div>
-                  <div class="ui-tabs-hide" id="innertabs05-9"></div>
-                  <div class="ui-tabs-hide" id="innertabs05-10"></div>
-                  <div class="ui-tabs-hide" id="innertabs05-11"></div>
-                  <div class="ui-tabs-hide" id="innertabs05-12"></div>
               <!-- /divs -->
             </div>
           </div>
           <div class="ui-tabs-hide" id="tabs-6">
             <div class="ui-tabs innertabs" id="innertabs06">
               <ul class="innertabs-ul">
-                <li><a href="#innertabs06-1">__MSG_other__ | 1</a></li>
-                <li><a href="#innertabs06-2">2</a></li>
-                <li><a href="#innertabs06-3">3</a></li>
-                <li><a href="#innertabs06-4">4</a></li>
-                <li><a href="#innertabs06-5">__MSG_education__</a></li>
-                <li><a href="#innertabs06-6">__MSG_cooking__</a></li>
-                <li><a href="#innertabs06-7">__MSG_casino__</a></li>
-                <li><a href="#innertabs06-8">__MSG_boardgames__</a></li>
-                <li><a href="#innertabs06-9">solitaire</a></li>
-                <li><a href="#innertabs06-10">__MSG_rhythm__</a></li>
+                <li><a href="#innertabs06-1">animal games</a></li>
+                <li><a href="#innertabs06-2">bubble shooter</a></li>
+                <li><a href="#innertabs06-3">fun games</a></li>
+                <li><a href="#innertabs06-4">hidden objects</a></li>
+                <li><a href="#innertabs06-5">mahjong</a></li>
+                <li><a href="#innertabs06-6">__MSG_Physics__</a></li>
+                <li><a href="#innertabs06-7">simulation</a></li>
+                <li><a href="#innertabs06-8">time manage</a></li>
               </ul>
               <!-- divs -->
                   <div class="ui-tabs-hide" id="innertabs06-1"></div>
@@ -408,8 +374,6 @@
                   <div class="ui-tabs-hide" id="innertabs06-6"></div>
                   <div class="ui-tabs-hide" id="innertabs06-7"></div>
                   <div class="ui-tabs-hide" id="innertabs06-8"></div>
-                  <div class="ui-tabs-hide" id="innertabs06-9"></div>
-                  <div class="ui-tabs-hide" id="innertabs06-10"></div>
               <!-- /divs -->
             </div>
           </div>
