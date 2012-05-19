@@ -240,7 +240,7 @@
         var urlParams = gadgets.util.getUrlParameters();
         var swf = urlParams['swf'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:130px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fmg%2Fen%2Fjs%2Fmg-site.xml&container=ig&view=canvas&lang=en&country=US&sanitize=0&v=5e1e33d6ed1aa906&parent=http://www.google.com&libs=core:core.io:core.iglegacy:auth-refresh&is_signedin=1&synd=ig&mid=98#st=c%3Dig%26e%3DAPu7icoNBavZk8baIfCvk0/vdDO572RIj5Pgnt/Zv57cOlgGsj5fFyS0p3KnRpZlBb0mrGUFIwzwntxDM6O3FTyS1SFLeZkQzb0IyKKQclgEwWGGRFS2ZXMxS6EkhVbtM25yqSwOWvMH&gadgetId=101570238869037372979&swf='+swf+'" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:140px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fmg%2Fen%2Fjs%2Fmg-site.xml&container=ig&view=canvas&lang=en&country=US&sanitize=0&v=5e1e33d6ed1aa906&parent=http://www.google.com&libs=core:core.io:core.iglegacy:auth-refresh&is_signedin=1&synd=ig&mid=98#st=c%3Dig%26e%3DAPu7icoNBavZk8baIfCvk0/vdDO572RIj5Pgnt/Zv57cOlgGsj5fFyS0p3KnRpZlBb0mrGUFIwzwntxDM6O3FTyS1SFLeZkQzb0IyKKQclgEwWGGRFS2ZXMxS6EkhVbtM25yqSwOWvMH&gadgetId=101570238869037372979&swf='+swf+'" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
