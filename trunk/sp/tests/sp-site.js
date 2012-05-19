@@ -410,14 +410,11 @@
         
         var txt = $('input#s').val();
         
-        var uri = '"'+ txt +'"';
-        
-        var searchTerms = encodeURI(uri);
-        
+        var searchTerms = encodeURI(txt);
 
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(search%3A"+searchTerms+")%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=120";
+        var MY_URL = "http://publishers.spilgames.com/rss?q="+searchTerms+"&format=json";
         gadgets.io.makeRequest(MY_URL, callbackSearch, params);
         
         localStorage.setItem("searchBoxValue-"+gadgetId, txt);
@@ -427,42 +424,40 @@
         addAjaxLoaderGif();
     }
     function callbackSearch(response) {
-        var jsondata = response.data;
-        
-        if (!jsondata) {  return;         }
-        
-        var jsondatalength = jsondata["games"];
-
-            function pageselectCallbackSearch(page_index, jq){
-                
-                var items_per_page = 24;
-                
-                var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                
-                var html = "";
-                
-                html += "<ul class='games-ul'>";
-                
-                for(var i=page_index*items_per_page;i<max_elem;i++)
-                {
-                    var gametitle = jsondata.games[i].name;
-                    var gameurl = jsondata.games[i].swf_url;
-                    var gamethumb = jsondata.games[i].thumbnail_url;
-                    var gameid = jsondata.games[i].uuid;
+            var jsondata = response.data;
+            if (!jsondata) {  return;         }
+            
+            var jsondatalength = jsondata["entries"];
+    
+                function pageselectCallbackSearch(page_index, jq){
                     
-                    html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
+                    var items_per_page = 20;
+                    
+                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
+                    
+                    var html = "";
+                    
+                    html += "<ul class='games-ul'>";
+                    
+                    for(var i=page_index*items_per_page;i<max_elem;i++)
+                    {
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
+                        
+                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
+                    }
+                    
+                    html += "</ul>";
+                    
+                    $('#search-innertab-1').html(html);
+                    
+                    return false;
                 }
-                
-                html += "</ul>";
-                
-                $('#search-innertab-1').html(html);
-                
-                return false;
-            }
-
-        var optInit = { callback: pageselectCallbackSearch, current_page:1, items_per_page: '24' };
-        
-        $("#Pagination").pagination(jsondatalength.length, optInit);
+    
+            var optInit = { callback: pageselectCallbackSearch, current_page:1, items_per_page: '20' };
+            
+            $("#Pagination").pagination(jsondatalength.length, optInit);
         
         setTimeout(function() {
                 
@@ -504,6 +499,7 @@
         else if((selected === 1)&&(selected02 === 1)){	Innertabs022();	}
         else if((selected === 1)&&(selected02 === 2)){	Innertabs023();	}
         else if((selected === 1)&&(selected02 === 3)){	Innertabs024();	}
+        else if((selected === 1)&&(selected02 === 4)){	Innertabs025();	}
     }
     function loadHtmlInnertabs03() {
         var $tabs = $('#tabs').tabs();
@@ -519,13 +515,6 @@
         else if((selected === 2)&&(selected03 === 5)){	Innertabs036();	}
         else if((selected === 2)&&(selected03 === 6)){	Innertabs037();	}
         else if((selected === 2)&&(selected03 === 7)){	Innertabs038();	}
-        else if((selected === 2)&&(selected03 === 8)){	Innertabs039();	}
-        else if((selected === 2)&&(selected03 === 9)){	Innertabs0310();	}
-        else if((selected === 2)&&(selected03 === 10)){	Innertabs0311();	}
-        else if((selected === 2)&&(selected03 === 11)){	Innertabs0312();	}
-        else if((selected === 2)&&(selected03 === 12)){	Innertabs0313();	}
-        else if((selected === 2)&&(selected03 === 13)){	Innertabs0314();	}
-        else if((selected === 2)&&(selected03 === 14)){	Innertabs0315();	}
 
     }
     function loadHtmlInnertabs04() {
@@ -560,10 +549,6 @@
         else if((selected === 4)&&(selected05 === 5)){	Innertabs056();	}
         else if((selected === 4)&&(selected05 === 6)){	Innertabs057();	}
         else if((selected === 4)&&(selected05 === 7)){	Innertabs058();	}
-        else if((selected === 4)&&(selected05 === 8)){	Innertabs059();	}
-        else if((selected === 4)&&(selected05 === 9)){	Innertabs0510();	}
-        else if((selected === 4)&&(selected05 === 10)){	Innertabs0511();	}
-        else if((selected === 4)&&(selected05 === 11)){	Innertabs0512();	}
 
     }
     function loadHtmlInnertabs06() {
@@ -580,8 +565,6 @@
         else if((selected === 5)&&(selected06 === 5)){	Innertabs066();	}
         else if((selected === 5)&&(selected06 === 6)){	Innertabs067();	}
         else if((selected === 5)&&(selected06 === 7)){	Innertabs068();	}
-        else if((selected === 5)&&(selected06 === 8)){	Innertabs069();	}
-        else if((selected === 5)&&(selected06 === 9)){	Innertabs0610();	}
 
     }
 
@@ -840,6 +823,54 @@
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
+    function Innertabs025(){
+        
+        var params = {};
+        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=54&lang="+ langCountry +"&tsize=2&format=json";
+        gadgets.io.makeRequest(MY_URL, callback025, params);
+        
+    }
+        function callback025(response) {
+            var jsondata = response.data;
+            if (!jsondata) {  return;         }
+            
+            var jsondatalength = jsondata["entries"];
+    
+                function pageselectCallback025(page_index, jq){
+                    
+                    var items_per_page = 20;
+                    
+                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
+                    
+                    var html = "";
+                    
+                    html += "<ul class='games-ul'>";
+                    
+                    for(var i=page_index*items_per_page;i<max_elem;i++)
+                    {
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
+                        
+                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
+                    }
+                    
+                    html += "</ul>";
+                    
+                    $('#innertabs02-5').html(html);
+            
+                    addAppUrl();
+                    makeLiDraggable();
+                    
+                    return false;
+                }
+    
+            var optInit = { callback: pageselectCallback025, items_per_page: '20' };
+            
+            $("#Pagination").pagination(jsondatalength.length, optInit);
+        }
+    //
     
  //
 
@@ -851,7 +882,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=24&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback031, params);
         
     }
@@ -859,11 +890,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback031(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -873,10 +904,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -891,16 +921,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback031, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback031, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs032(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=31&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback032, params);
         
     }
@@ -908,11 +938,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback032(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -922,10 +952,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -940,16 +969,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback032, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback032, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs033(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=32&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback033, params);
         
     }
@@ -957,11 +986,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback033(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -971,10 +1000,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -989,16 +1017,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback033, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback033, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs034(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=29&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback034, params);
         
     }
@@ -1006,11 +1034,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback034(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1020,10 +1048,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1038,16 +1065,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback034, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback034, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs035(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=3200";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=58&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback035, params);
         
     }
@@ -1055,11 +1082,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback035(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1069,10 +1096,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1087,16 +1113,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback035, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback035, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs036(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4000";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=46&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback036, params);
         
     }
@@ -1104,11 +1130,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback036(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1118,10 +1144,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1136,16 +1161,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback036, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback036, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs037(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=18&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback037, params);
         
     }
@@ -1153,11 +1178,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback037(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1167,10 +1192,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1185,16 +1209,16 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback037, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback037, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
     //
     function Innertabs038(){
-        
+
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=5600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=36&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback038, params);
         
     }
@@ -1202,11 +1226,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback038(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1216,10 +1240,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1234,350 +1257,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback038, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs039(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=6400";
-        gadgets.io.makeRequest(MY_URL, callback039, params);
-        
-    }
-        function callback039(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback039(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-9').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback039, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0310(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=7200";
-        gadgets.io.makeRequest(MY_URL, callback0310, params);
-        
-    }
-        function callback0310(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0310(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-10').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0310, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0311(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adress-up)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=8000";
-        gadgets.io.makeRequest(MY_URL, callback0311, params);
-        
-    }
-        function callback0311(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0311(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-11').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0311, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0312(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(search%3A%22make%20up%22)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0312, params);
-        
-    }
-        function callback0312(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0312(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-12').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0312, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0313(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(search%3A%22make%20up%22)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback0313, params);
-        
-    }
-        function callback0313(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0313(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-13').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0313, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0314(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Acustomize)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0314, params);
-        
-    }
-        function callback0314(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0314(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-14').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0314, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0315(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Acustomize)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback0315, params);
-        
-    }
-        function callback0315(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0315(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs03-15').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0315, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback038, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -1593,7 +1273,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=1&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback041, params);
         
     }
@@ -1601,11 +1281,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback041(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1615,10 +1295,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1633,7 +1312,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback041, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback041, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -1642,7 +1321,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=45&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback042, params);
         
     }
@@ -1650,11 +1329,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback042(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1664,10 +1343,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1682,7 +1360,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback042, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback042, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -1691,7 +1369,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=48&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback043, params);
         
     }
@@ -1699,11 +1377,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback043(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1713,10 +1391,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1731,7 +1408,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback043, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback043, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -1740,7 +1417,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=49&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback044, params);
         
     }
@@ -1748,11 +1425,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback044(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -1762,10 +1439,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -1780,301 +1456,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback044, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs045(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=3200";
-        gadgets.io.makeRequest(MY_URL, callback045, params);
-        
-    }
-        function callback045(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback045(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-5').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback045, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs046(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4000";
-        gadgets.io.makeRequest(MY_URL, callback046, params);
-        
-    }
-        function callback046(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback046(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-6').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback046, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs047(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aaction)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=4800";
-        gadgets.io.makeRequest(MY_URL, callback047, params);
-        
-    }
-        function callback047(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback047(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-7').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback047, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs048(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aadventure)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback048, params);
-        
-    }
-        function callback048(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback048(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-8').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback048, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs049(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aadventure)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback049, params);
-        
-    }
-        function callback049(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback049(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-9').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback049, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0410(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aadventure)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
-        gadgets.io.makeRequest(MY_URL, callback0410, params);
-        
-    }
-        function callback0410(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0410(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs04-10').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0410, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback044, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2090,7 +1472,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adriving)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=1&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback051, params);
         
     }
@@ -2098,11 +1480,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback051(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2112,10 +1494,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2130,7 +1511,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback051, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback051, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2139,7 +1520,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Adriving)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=45&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback052, params);
         
     }
@@ -2147,11 +1528,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback052(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2161,10 +1542,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2179,7 +1559,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback052, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback052, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2188,7 +1568,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ashooting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=48&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback053, params);
         
     }
@@ -2196,11 +1576,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback053(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2210,10 +1590,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2228,7 +1607,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback053, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback053, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2237,7 +1616,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ashooting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=4&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback054, params);
         
     }
@@ -2245,11 +1624,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback054(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2259,10 +1638,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2277,7 +1655,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback054, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback054, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2286,7 +1664,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ashooting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=6&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback055, params);
         
     }
@@ -2294,11 +1672,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback055(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2308,10 +1686,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2326,7 +1703,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback055, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback055, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2335,7 +1712,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ashooting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=49&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback056, params);
         
     }
@@ -2343,11 +1720,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback056(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2357,10 +1734,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2375,7 +1751,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback056, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback056, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2384,7 +1760,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Ashooting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=3200";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=50&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback057, params);
         
     }
@@ -2392,11 +1768,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback057(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2406,10 +1782,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2424,7 +1799,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback057, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback057, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2433,7 +1808,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Astrategy)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=57&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback058, params);
         
     }
@@ -2441,11 +1816,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback058(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2455,10 +1830,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2473,203 +1847,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback058, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs059(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Astrategy)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback059, params);
-        
-    }
-        function callback059(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback059(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs05-9').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback059, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0510(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Asports)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0510, params);
-        
-    }
-        function callback0510(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0510(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs05-10').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0510, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0511(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Asports)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
-        gadgets.io.makeRequest(MY_URL, callback0511, params);
-        
-    }
-        function callback0511(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0511(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs05-11').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0511, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0512(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Afighting)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0512, params);
-        
-    }
-        function callback0512(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0512(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs05-12').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0512, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback058, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2685,7 +1863,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aother)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=46&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback061, params);
         
     }
@@ -2693,11 +1871,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback061(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2707,10 +1885,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2725,7 +1902,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback061, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback061, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2734,7 +1911,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aother)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=800";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=56&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback062, params);
         
     }
@@ -2742,11 +1919,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback062(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2756,10 +1933,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2774,7 +1950,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback062, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback062, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2783,7 +1959,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aother)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=1600";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=36&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback063, params);
         
     }
@@ -2791,11 +1967,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback063(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2805,10 +1981,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2823,7 +1998,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback063, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback063, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2832,7 +2007,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aother)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=2400";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=54&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback064, params);
         
     }
@@ -2840,11 +2015,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback064(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2854,10 +2029,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2872,7 +2046,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback064, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback064, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2881,7 +2055,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aeducation)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=55&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback065, params);
         
     }
@@ -2889,11 +2063,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback065(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2903,10 +2077,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2921,7 +2094,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback065, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback065, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2930,7 +2103,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(search%3Acooking)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=49&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback066, params);
         
     }
@@ -2938,11 +2111,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback066(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -2952,10 +2125,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -2970,7 +2142,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback066, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback066, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -2979,7 +2151,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Acasino)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=18&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback067, params);
         
     }
@@ -2987,11 +2159,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback067(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -3001,10 +2173,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -3019,7 +2190,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback067, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback067, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -3028,7 +2199,7 @@
         
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Aboard-game)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=1200&offset=0";
+        var MY_URL = "http://publishers.spilgames.com/rss?cat=53&lang="+ langCountry +"&tsize=2&format=json";
         gadgets.io.makeRequest(MY_URL, callback068, params);
         
     }
@@ -3036,11 +2207,11 @@
             var jsondata = response.data;
             if (!jsondata) {  return;         }
             
-            var jsondatalength = jsondata["games"];
+            var jsondatalength = jsondata["entries"];
     
                 function pageselectCallback068(page_index, jq){
                     
-                    var items_per_page = 24;
+                    var items_per_page = 20;
                     
                     var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
                     
@@ -3050,10 +2221,9 @@
                     
                     for(var i=page_index*items_per_page;i<max_elem;i++)
                     {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
+                        var gametitle = jsondata.entries[i].title;
+                        var gameurl = jsondata.entries[i].player.url;
+                        var gamethumb = jsondata.entries[i].thumbnails[1].url;
                         
                         html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
                     }
@@ -3068,105 +2238,7 @@
                     return false;
                 }
     
-            var optInit = { callback: pageselectCallback068, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs069(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(search%3Asolitaire)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback069, params);
-        
-    }
-        function callback069(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback069(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs06-9').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback069, items_per_page: '24' };
-            
-            $("#Pagination").pagination(jsondatalength.length, optInit);
-        }
-    //
-    function Innertabs0610(){
-        
-        var params = {};
-        params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://catalog.mochimedia.com/feeds/query/?q=(category%3Arhythm)%20and%20not%20tags%3Azh-cn&partner_id=67441e62ba4fd001&limit=800&offset=0";
-        gadgets.io.makeRequest(MY_URL, callback0610, params);
-        
-    }
-        function callback0610(response) {
-            var jsondata = response.data;
-            if (!jsondata) {  return;         }
-            
-            var jsondatalength = jsondata["games"];
-    
-                function pageselectCallback0610(page_index, jq){
-                    
-                    var items_per_page = 24;
-                    
-                    var max_elem = Math.min((page_index+1) * items_per_page, jsondatalength.length);
-                    
-                    var html = "";
-                    
-                    html += "<ul class='games-ul'>";
-                    
-                    for(var i=page_index*items_per_page;i<max_elem;i++)
-                    {
-                        var gametitle = jsondata.games[i].name;
-                        var gameurl = jsondata.games[i].swf_url;
-                        var gamethumb = jsondata.games[i].thumbnail_url;
-                        var gameid = jsondata.games[i].uuid;
-                        
-                        html += "<li class='games-li ui-state-default ui-corner-all'><a class='game-newwin' href='" + gameurl + "' target='_blank'><span class='ui-icon ui-icon-newwin'></span></a><span class='favorite-span'><span class='ui-icon ui-icon-heart'></span></span><img class='thumb ui-state-default  ui-corner-all' src='" + gamethumb + "' onclick='loadThatGame(\"" + gameurl + "\");' /><div class='title-div'>" + gametitle + "</div></li>";
-                    }
-                    
-                    html += "</ul>";
-                    
-                    $('#innertabs06-10').html(html);
-            
-                    addAppUrl();
-                    makeLiDraggable();
-                    
-                    return false;
-                }
-    
-            var optInit = { callback: pageselectCallback0610, items_per_page: '24' };
+            var optInit = { callback: pageselectCallback068, items_per_page: '20' };
             
             $("#Pagination").pagination(jsondatalength.length, optInit);
         }
@@ -3360,6 +2432,7 @@ $(function () {
         $('#innertabs02 ul li a:eq(1)').on('click', function() {	Innertabs022();	});
         $('#innertabs02 ul li a:eq(2)').on('click', function() {	Innertabs023();	});
         $('#innertabs02 ul li a:eq(3)').on('click', function() {	Innertabs024();	});
+        $('#innertabs02 ul li a:eq(4)').on('click', function() {	Innertabs025();	});
         
 	  //
         
@@ -3373,13 +2446,6 @@ $(function () {
         $('#innertabs03 ul li a:eq(5)').on('click', function() {	Innertabs036();	});
         $('#innertabs03 ul li a:eq(6)').on('click', function() {	Innertabs037();	});
         $('#innertabs03 ul li a:eq(7)').on('click', function() {	Innertabs038();	});
-        $('#innertabs03 ul li a:eq(8)').on('click', function() {	Innertabs039();	});
-        $('#innertabs03 ul li a:eq(9)').on('click', function() {	Innertabs0310();	});
-        $('#innertabs03 ul li a:eq(10)').on('click', function() {	Innertabs0311();	});
-        $('#innertabs03 ul li a:eq(11)').on('click', function() {	Innertabs0312();	});
-        $('#innertabs03 ul li a:eq(12)').on('click', function() {	Innertabs0313();	});
-        $('#innertabs03 ul li a:eq(13)').on('click', function() {	Innertabs0314();	});
-        $('#innertabs03 ul li a:eq(14)').on('click', function() {	Innertabs0315();	});
         
 	  //
         
@@ -3408,10 +2474,6 @@ $(function () {
         $('#innertabs05 ul li a:eq(5)').on('click', function() {	Innertabs056();	});
         $('#innertabs05 ul li a:eq(6)').on('click', function() {	Innertabs057();	});
         $('#innertabs05 ul li a:eq(7)').on('click', function() {	Innertabs058();	});
-        $('#innertabs05 ul li a:eq(8)').on('click', function() {	Innertabs059();	});
-        $('#innertabs05 ul li a:eq(9)').on('click', function() {	Innertabs0510();	});
-        $('#innertabs05 ul li a:eq(10)').on('click', function() {	Innertabs0511();	});
-        $('#innertabs05 ul li a:eq(11)').on('click', function() {	Innertabs0512();	});
         
 	  //
         
@@ -3425,8 +2487,6 @@ $(function () {
         $('#innertabs06 ul li a:eq(5)').on('click', function() {	Innertabs066();	});
         $('#innertabs06 ul li a:eq(6)').on('click', function() {	Innertabs067();	});
         $('#innertabs06 ul li a:eq(7)').on('click', function() {	Innertabs068();	});
-        $('#innertabs06 ul li a:eq(8)').on('click', function() {	Innertabs069();	});
-        $('#innertabs06 ul li a:eq(9)').on('click', function() {	Innertabs0610();	});
         
 	  //
 	  
