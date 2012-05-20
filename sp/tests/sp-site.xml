@@ -9,6 +9,7 @@
         <msg name="thumbnail">http://lh6.googleusercontent.com/-f-kF6sKueZ4/T2vEbXf9J5I/AAAAAAAAPAY/lSGzUOGV1EI/s800/400x200-mg-thumb.png</msg>
         
         <msg name="new">New</msg>
+        <msg name="allgames">all games</msg>
         <msg name="mygame">my game</msg>
         <msg name="addgame">add / change game</msg>
         <msg name="searchgames">search games</msg>
@@ -73,6 +74,7 @@
         <msg name="description">Jogar jogos online</msg>
         
         <msg name="new">novo</msg>
+        <msg name="allgames">todos os jogos</msg>
         <msg name="mygame">meu jogo</msg>
         <msg name="addgame">adicionar jogo</msg>
         <msg name="searchgames">buscar jogos</msg>
@@ -137,6 +139,7 @@
         <msg name="description">Joaca jocuri online</msg>
         
         <msg name="new">Nou</msg>
+        <msg name="allgames">toate jocurile</msg>
         <msg name="mygame">jocul meu</msg>
         <msg name="addgame">adauga / schimba</msg>
         <msg name="searchgames">cauta jocuri</msg>
@@ -250,7 +253,7 @@
         <div id="container" class="ui-widget-content ui-corner-all">
         <div id="tabs" class="ui-tabs">
           <ul id="tabs-ul">
-            <li id="tabs-ul-li-01"><a href="#tabs-1">all games</a></li>
+            <li id="tabs-ul-li-01"><a href="#tabs-1">__MSG_allgames__</a></li>
             <li id="tabs-ul-li-02"><a href="#tabs-2">__MSG_puzzle__</a></li>
             <li id="tabs-ul-li-03"><a href="#tabs-3">__MSG_girls__</a></li>
             <li id="tabs-ul-li-04"><a href="#tabs-4">__MSG_action__</a></li>
