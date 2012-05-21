@@ -213,10 +213,6 @@
     function adjustHeight() { 
         gadgets.window.adjustHeight();
     }
-    
-
-    gadgets.util.registerOnLoadHandler(adjustHeight);
-    
 </script>
 
 <div id="ig-homeview-div">
@@ -225,6 +221,22 @@
     </div>
     <img id="expand-down" src="http://sites.google.com/site/onlinegames01org/control_down.png" />
 </div>
+<div id="ig-homeview-content"></div>
+
+<script type="text/javascript">
+
+    var urlParams = gadgets.util.getUrlParameters();
+    var language = urlParams['lang'];
+    var country = urlParams['country'];
+
+    $('#expand-down').on('click', function() {
+        $('#ig-homeview-content').html('<iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fpt_BR%2Ffl%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=113595717453088919560" width="100%"></iframe>');
+        
+        adjustHeight();
+    });
+    
+    gadgets.util.registerOnLoadHandler(adjustHeight);
+</script>
 ]]>
 </Content>
 <Content type="html" view="canvas" preferred_width="970">
