@@ -214,9 +214,8 @@
         gadgets.window.adjustHeight();
     }
     
-    $(function () {
-        adjustHeight();
-    });
+
+    gadgets.util.registerOnLoadHandler(adjustHeight);
     
 </script>
 
