@@ -239,6 +239,9 @@
     $(function () {
         $('#collapse-div').on('click', function() {
                 $('#ig-homeview-content').empty();
+                
+                $('#ig-homeview-div').hide();
+                
                 adjustHeight();
             });
         $('#collapse-div').hide();
