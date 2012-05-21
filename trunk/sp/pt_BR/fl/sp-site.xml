@@ -216,7 +216,7 @@
 </script>
 
 <div id="ig-homeview-div">
-    <img id="ig-home-thumb" src="__MSG_thumbnail__" />
+    <div id ="thumb-div"><img id="ig-home-thumb" src="__MSG_thumbnail__" /></div>
     <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
 </div>
 <div id="ig-homeview-content"></div>
