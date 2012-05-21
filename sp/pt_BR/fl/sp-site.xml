@@ -201,21 +201,23 @@
     </Locale>
 </ModulePrefs>
 <Content type="html" view="home">
-    <![CDATA[
-    <!DOCTYPE html>
-    <link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
-    <script type="text/javascript">
-        function goToView(dest) {
-              var supported_views = gadgets.views.getSupportedViews();
-              gadgets.views.requestNavigateTo(supported_views[dest]);
-            };
-    </script>
-    <div id="ig-homeview-div" onclick="goToView('canvas');">
-        <div id="thumb-play-button">
-            <img id="ig-home-thumb" src="__MSG_thumbnail__" /><a id="a-ig-home" href="javascript:goToView('canvas')">Play</a>
-        </div>
+<![CDATA[
+<!DOCTYPE html>
+<link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function goToView(dest) {
+          var supported_views = gadgets.views.getSupportedViews();
+          gadgets.views.requestNavigateTo(supported_views[dest]);
+        };
+</script>
+
+<div id="ig-homeview-div">
+    <div id="thumb-play-button" onclick="goToView('canvas');">
+        <img id="ig-home-thumb" src="__MSG_thumbnail__" /><a id="a-ig-home" href="javascript:goToView('canvas')">Play</a>
     </div>
-    ]]>
+</div>
+]]>
 </Content>
 <Content type="html" view="canvas" preferred_width="970">
 <![CDATA[

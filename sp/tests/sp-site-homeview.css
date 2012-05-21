@@ -19,6 +19,7 @@ body {
 
 #thumb-play-button {
     height: 32px;
+    width: 105px;
     opacity:0.4;
     filter: alpha(opacity = 40);
     
