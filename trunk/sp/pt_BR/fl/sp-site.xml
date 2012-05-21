@@ -205,11 +205,6 @@
 <!DOCTYPE html>
 <link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    function adjustHeight() { 
-        gadgets.window.adjustHeight();
-    }
-</script>
 
 <div id="ig-homeview-div">
     <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
