@@ -9,15 +9,8 @@ body {
     font: 0.8em arial, sans-serif;
 }
 
-#ig-home-thumb { 
-    float:left; 
-    width:60px; 
-    height:30px; 
-    cursor: pointer;
-}
-
-
 #thumb-play-button {
+    float:left; 
     height: 32px;
     width: 105px;
     opacity:0.4;
@@ -36,6 +29,17 @@ body {
     transition: opacity .2s linear;
     -moz-transition: opacity .2s linear;
     -o-transition: opacity .2s linear;
+}
+
+#ig-home-thumb { 
+    float:left; 
+    width:60px; 
+    height:30px; 
+    cursor: pointer;
+}
+
+img#expand-down {
+    
 }
 
 
