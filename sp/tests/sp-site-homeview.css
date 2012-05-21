@@ -7,7 +7,7 @@ body {
 #ig-homeview-div {
     height: 36px;
         
-    opacity:0.4;
+    opacity:0.6;
     filter: alpha(opacity = 40);
     
     -webkit-transition: opacity .3s linear;
@@ -48,14 +48,5 @@ body {
 }
 
 
-#a-ig-home { 
-    color:#00C; 
-    position:relative; 
-    left:12px; 
-    top:9px;
-    text-decoration:none; 
-}
 
-#a-ig-home:hover { 
-    text-decoration:underline; 
-}
+
