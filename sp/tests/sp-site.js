@@ -6,7 +6,6 @@
     var urlParams = gadgets.util.getUrlParameters();
     var language = urlParams['lang'];
     var gadgetId = urlParams['gadgetId'];
-    var swf = urlParams['swf'];
     
     var language = urlParams['lang'];
     
@@ -238,11 +237,10 @@
     function openEmbedDialog() {
         
         var urlParams = gadgets.util.getUrlParameters();
-        var swf = urlParams['swf'];
         var language = urlParams['lang'];
         var country = urlParams['country'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fpt_BR%2Ffl%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=113595717453088919560&swf='+swf+'" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fpt_BR%2Ffl%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=113595717453088919560" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
@@ -348,17 +346,6 @@
         }
     }
     function loadDefaultGame() {
-        
-        checkbox01UserPref();
-        
-        var urlParams = gadgets.util.getUrlParameters();
-        var swf = urlParams['swf'];
-        
-        if ( swf !== "home" ) {
-            $( "#gamediv-wrapper" ).dialog('open');
-            
-            $('#gametd').html('<embed class="embedgame" src="'+ swf +'" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
-        }
     }
     function checkbox02UserPref() {
         
