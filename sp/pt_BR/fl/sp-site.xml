@@ -228,20 +228,20 @@
     var language = urlParams['lang'];
     var country = urlParams['country'];
 
-    $('#expand-icon').on('click', function() {
+    $('#expand-div').on('click', function() {
         $('#ig-homeview-content').html('<iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fpt_BR%2Ffl%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=113595717453088919560" width="100%"></iframe>');
         
         adjustHeight();
         
-        $('#expand-icon').show();
+        $('#collapse-div').show();
     });
     
     $(function () {
-        $('#expand-icon').on('click', function() {
+        $('#collapse-div').on('click', function() {
                 $('#ig-homeview-content').empty();
                 adjustHeight();
             });
-        $('#expand-icon').hide();
+        $('#collapse-div').hide();
     });
     
     gadgets.util.registerOnLoadHandler(adjustHeight);
