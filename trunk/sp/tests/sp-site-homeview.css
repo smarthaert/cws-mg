@@ -5,8 +5,7 @@ body {
 }
 
 #ig-homeview-div, #ig-homeview-div-2 {
-    height: 39px;
-    margin-bottom:2px;
+    height: 40px;
     overflow:hidden;
         
     opacity:0.6;
