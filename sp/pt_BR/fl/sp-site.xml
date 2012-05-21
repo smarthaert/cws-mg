@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs title="__MSG_title__" screenshot="__MSG_thumbnail__" thumbnail="__MSG_thumbnail__" description="__MSG_description__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="36">
+<ModulePrefs title="__MSG_title__" screenshot="__MSG_thumbnail__" thumbnail="__MSG_thumbnail__" description="__MSG_description__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="39">
     <Require feature="views" />
     <Require feature="dynamic-height" />
     <Locale lang="all">
