@@ -49,10 +49,11 @@ body {
     height: 36px;
     width: 36px;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid #e6e4e4;
 }
 #expand-icon:hover, #collapse-icon:hover {
     border: 1px solid #ccc;
+    background-color: #f9f7f7;
 }
 
 
