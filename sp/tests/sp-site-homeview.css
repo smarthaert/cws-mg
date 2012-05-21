@@ -5,7 +5,7 @@ body {
 }
 
 #ig-homeview-div {
-    height: 32px;
+    height: 70px;
     font: 0.8em arial, sans-serif;
 }
 
@@ -39,7 +39,8 @@ body {
 }
 
 img#expand-down {
-    
+    display: block;
+    height: 48px;
 }
 
 
