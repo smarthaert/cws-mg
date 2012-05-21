@@ -210,11 +210,17 @@
           var supported_views = gadgets.views.getSupportedViews();
           gadgets.views.requestNavigateTo(supported_views[dest]);
         };
+    function adjustHeight() { 
+        gadgets.window.adjustHeight();
+        window.setTimeout( function () { gadgets.window.adjustHeight(); } , 1000);
+        window.setTimeout( function () { gadgets.window.adjustHeight(); } , 3000);
+    }
 </script>
 
 <div id="ig-homeview-div">
     <div id="thumb-play-button" onclick="goToView('canvas');">
         <img id="ig-home-thumb" src="__MSG_thumbnail__" /><a id="a-ig-home" href="javascript:goToView('canvas')">Play</a>
+        <img id="expand-down" src="http://sites.google.com/site/onlinegames01org/control_down.png" />
     </div>
 </div>
 ]]>
