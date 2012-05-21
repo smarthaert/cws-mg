@@ -212,8 +212,6 @@
         };
     function adjustHeight() { 
         gadgets.window.adjustHeight();
-        window.setTimeout( function () { gadgets.window.adjustHeight(); } , 1000);
-        window.setTimeout( function () { gadgets.window.adjustHeight(); } , 3000);
     }
     
     $(function () {
