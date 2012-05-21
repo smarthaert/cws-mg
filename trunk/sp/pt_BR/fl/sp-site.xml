@@ -206,10 +206,6 @@
 <link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-    function goToView(dest) {
-          var supported_views = gadgets.views.getSupportedViews();
-          gadgets.views.requestNavigateTo(supported_views[dest]);
-        };
     function adjustHeight() { 
         gadgets.window.adjustHeight();
     }
