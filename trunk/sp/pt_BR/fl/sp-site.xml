@@ -217,7 +217,7 @@
 
 <div id="ig-homeview-div">
     <div id="thumb-play-button">
-        <img id="ig-home-thumb" src="__MSG_thumbnail__" /><img id="expand-down" src="http://sites.google.com/site/onlinegames01org/control_down.png" />
+        <img id="ig-home-thumb" src="__MSG_thumbnail__" /><img id="expand-down" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" />
     </div>
 </div>
 <div id="ig-homeview-content"></div>
