@@ -222,8 +222,8 @@
 <div id="ig-homeview-div">
     <div id="thumb-play-button" onclick="goToView('canvas');">
         <img id="ig-home-thumb" src="__MSG_thumbnail__" /><a id="a-ig-home" href="javascript:goToView('canvas')">Play</a>
-        <img id="expand-down" src="http://sites.google.com/site/onlinegames01org/control_down.png" />
     </div>
+    <img id="expand-down" src="http://sites.google.com/site/onlinegames01org/control_down.png" />
 </div>
 ]]>
 </Content>
