@@ -6,13 +6,7 @@ body {
 
 #ig-homeview-div {
     height: 36px;
-    font: 0.8em arial, sans-serif;
-}
-
-#thumb-play-button {
-    float:left; 
-    height: 32px;
-    width: 105px;
+        
     opacity:0.4;
     filter: alpha(opacity = 40);
     
@@ -21,7 +15,7 @@ body {
     -moz-transition: opacity .3s linear;
     -o-transition: opacity .3s linear;
 }
-#thumb-play-button:hover { 
+#ig-homeview-div:hover {
     opacity:1;
     filter: alpha(opacity = 100);
     
@@ -32,14 +26,22 @@ body {
 }
 
 #ig-home-thumb { 
+    display: block;
     float:left; 
-    width:60px; 
-    height:30px; 
+    width:72px; 
+    height:36px; 
     cursor: pointer;
 }
 
-img#expand-down {
-    display: block;
+#expand-div {
+    height: 36px;
+    width: 36px;
+    position:relative;
+    top:10px;
+    left:-26px;
+}
+
+#expand-icon {
     height: 36px;
     width: 36px;
     cursor: pointer;
