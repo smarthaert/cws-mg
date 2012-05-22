@@ -240,7 +240,7 @@
         var language = urlParams['lang'];
         var country = urlParams['country'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fmg%2Fsp-mg-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=a9160afe64458101&gadgetId=116203778744059425311" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Ftests%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&gadgetId=115280818106719889543" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
