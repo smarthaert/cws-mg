@@ -201,52 +201,52 @@
     </Locale>
 </ModulePrefs>
 <Content type="html" view="home">
-<![CDATA[
-<!DOCTYPE html>
-<link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
-<div id="ig-homeview-div">
-    <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
-    <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
-</div>
-<div id ="ig-homeview-div-2">
-    <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
-    <div id ="collapse-div"><img id="collapse-icon" src="http://sites.google.com/site/onlinegames01org/control_up.png" /></div>
-</div>
-<div id="ig-homeview-content"></div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
+    <![CDATA[
+    <!DOCTYPE html>
+    <link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
+    <div id="ig-homeview-div">
+        <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
+        <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
+    </div>
+    <div id ="ig-homeview-div-2">
+        <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
+        <div id ="collapse-div"><img id="collapse-icon" src="http://sites.google.com/site/onlinegames01org/control_up.png" /></div>
+    </div>
+    <div id="ig-homeview-content"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        var urlParams = gadgets.util.getUrlParameters();
+        var language = urlParams['lang'];
+        var country = urlParams['country'];
+        
+        $('#expand-div').on('click', function() {
+            $('#ig-homeview-content').html('<iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Ftests%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&gadgetId=115280818106719889543" width="100%"></iframe>');
+            
+            $('#ig-homeview-div').hide();
+            $('#ig-homeview-div-2').show();
+            
+            gadgets.window.adjustHeight();
+            
+        });
+        
+        $(function () {
+            $('#collapse-div').on('click', function() {
+                    $('#ig-homeview-content').empty();
+                    
+                    $(this).parent().hide();
+                    
+                    $('#ig-homeview-div').show();
+                    
+                    gadgets.window.adjustHeight();
+                });
+            $('#ig-homeview-div-2').hide();
+            
+            gadgets.window.adjustHeight();
+        });
     
-    var urlParams = gadgets.util.getUrlParameters();
-    var language = urlParams['lang'];
-    var country = urlParams['country'];
-    
-    $('#expand-div').on('click', function() {
-        $('#ig-homeview-content').html('<iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Ftests%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&gadgetId=115280818106719889543" width="100%"></iframe>');
-        
-        $('#ig-homeview-div').hide();
-        $('#ig-homeview-div-2').show();
-        
-        gadgets.window.adjustHeight();
-        
-    });
-    
-    $(function () {
-        $('#collapse-div').on('click', function() {
-                $('#ig-homeview-content').empty();
-                
-                $(this).parent().hide();
-                
-                $('#ig-homeview-div').show();
-                
-                gadgets.window.adjustHeight();
-            });
-        $('#ig-homeview-div-2').hide();
-        
-        gadgets.window.adjustHeight();
-    });
-
-</script>
-]]>
+    </script>
+    ]]>
 </Content>
 <Content type="html" view="canvas" preferred_width="970">
 <![CDATA[
