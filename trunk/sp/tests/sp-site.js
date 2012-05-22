@@ -50,90 +50,6 @@
 
 //    functions set-1
 
-    function updateAppSettings() {
-        
-        if ( $('#checkbox-01').is(':checked') ) {
-            var checkbox01UserPref = "1";
-            
-            $('#app-container').width(950);
-            $('#gamediv-wrapper').width(950);
-            
-            $("#gamediv-wrapper").dialog( "option", "width", 950 );
-            
-            
-        } else if ( !$('#checkbox-01').is(':checked') ) {
-            checkbox01UserPref = "0";
-            
-            $('#app-container').width(840);
-            
-            $("#gamediv-wrapper").dialog( "option", "width", 840 );
-            
-        }
-        
-        if ( $('#checkbox-02').is(':checked') ) {
-            var checkbox02UserPref = "1";
-        } else if ( !$('#checkbox-02').is(':checked') ) {
-            checkbox02UserPref = "0";
-        }
-        
-        localStorage.setItem("checkbox01-"+gadgetId, checkbox01UserPref);
-        localStorage.setItem("checkbox02-"+gadgetId, checkbox02UserPref);
-        
-        
-        if ( $('#check-1').is(':checked') ) {
-            var check1ls = "1";
-            $('#tabs-ul-li-01').hide();
-        } else if ( !$('#check-1').is(':checked') ) {
-            check1ls = "0";
-            $('#tabs-ul-li-01').show();
-        }
-        if ( $('#check-2').is(':checked') ) {
-            var check2ls = "1";
-            $('#tabs-ul-li-02').hide();
-        } else if ( !$('#check-2').is(':checked') ) {
-            check2ls = "0";
-            $('#tabs-ul-li-02').show();
-        }
-        if ( $('#check-3').is(':checked') ) {
-            var check3ls = "1";
-            $('#tabs-ul-li-03').hide();
-        } else if ( !$('#check-3').is(':checked') ) {
-            check3ls = "0";
-            $('#tabs-ul-li-03').show();
-        }
-        if ( $('#check-4').is(':checked') ) {
-            var check4ls = "1";
-            $('#tabs-ul-li-04').hide();
-        } else if ( !$('#check-4').is(':checked') ) {
-            check4ls = "0";
-            $('#tabs-ul-li-04').show();
-        }
-        if ( $('#check-5').is(':checked') ) {
-            var check5ls = "1";
-            $('#tabs-ul-li-05').hide();
-        } else if ( !$('#check-5').is(':checked') ) {
-            check5ls = "0";
-            $('#tabs-ul-li-05').show();
-        }
-        if ( $('#check-6').is(':checked') ) {
-            var check6ls = "1";
-            $('#tabs-ul-li-06').hide();
-        } else if ( !$('#check-6').is(':checked') ) {
-            check6ls = "0";
-            $('#tabs-ul-li-06').show();
-        }
-        
-        localStorage.setItem("check-1-"+gadgetId, check1ls);
-        localStorage.setItem("check-2-"+gadgetId, check2ls);
-        localStorage.setItem("check-3-"+gadgetId, check3ls);
-        localStorage.setItem("check-4-"+gadgetId, check4ls);
-        localStorage.setItem("check-5-"+gadgetId, check5ls);
-        localStorage.setItem("check-6-"+gadgetId, check6ls);
-        
-        
-        updateGameHeight();
-        
-    }
     function adjustHeight() { 
         window.setTimeout( function () { gadgets.window.adjustHeight(); } , 10);
         window.setTimeout( function () { gadgets.window.adjustHeight(); } , 1000);
@@ -280,6 +196,90 @@
     function updateGameHeight() {
         var gameHeight = $("#game-tab").height();
         localStorage.setItem("gameHeight-"+gadgetId, gameHeight);
+    }
+    function updateAppSettings() {
+        
+        if ( $('#checkbox-01').is(':checked') ) {
+            var checkbox01UserPref = "1";
+            
+            $('#app-container').width(950);
+            $('#gamediv-wrapper').width(950);
+            
+            $("#gamediv-wrapper").dialog( "option", "width", 950 );
+            
+            
+        } else if ( !$('#checkbox-01').is(':checked') ) {
+            checkbox01UserPref = "0";
+            
+            $('#app-container').width(840);
+            
+            $("#gamediv-wrapper").dialog( "option", "width", 840 );
+            
+        }
+        
+        if ( $('#checkbox-02').is(':checked') ) {
+            var checkbox02UserPref = "1";
+        } else if ( !$('#checkbox-02').is(':checked') ) {
+            checkbox02UserPref = "0";
+        }
+        
+        localStorage.setItem("checkbox01-"+gadgetId, checkbox01UserPref);
+        localStorage.setItem("checkbox02-"+gadgetId, checkbox02UserPref);
+        
+        
+        if ( $('#check-1').is(':checked') ) {
+            var check1ls = "1";
+            $('#tabs-ul-li-01').hide();
+        } else if ( !$('#check-1').is(':checked') ) {
+            check1ls = "0";
+            $('#tabs-ul-li-01').show();
+        }
+        if ( $('#check-2').is(':checked') ) {
+            var check2ls = "1";
+            $('#tabs-ul-li-02').hide();
+        } else if ( !$('#check-2').is(':checked') ) {
+            check2ls = "0";
+            $('#tabs-ul-li-02').show();
+        }
+        if ( $('#check-3').is(':checked') ) {
+            var check3ls = "1";
+            $('#tabs-ul-li-03').hide();
+        } else if ( !$('#check-3').is(':checked') ) {
+            check3ls = "0";
+            $('#tabs-ul-li-03').show();
+        }
+        if ( $('#check-4').is(':checked') ) {
+            var check4ls = "1";
+            $('#tabs-ul-li-04').hide();
+        } else if ( !$('#check-4').is(':checked') ) {
+            check4ls = "0";
+            $('#tabs-ul-li-04').show();
+        }
+        if ( $('#check-5').is(':checked') ) {
+            var check5ls = "1";
+            $('#tabs-ul-li-05').hide();
+        } else if ( !$('#check-5').is(':checked') ) {
+            check5ls = "0";
+            $('#tabs-ul-li-05').show();
+        }
+        if ( $('#check-6').is(':checked') ) {
+            var check6ls = "1";
+            $('#tabs-ul-li-06').hide();
+        } else if ( !$('#check-6').is(':checked') ) {
+            check6ls = "0";
+            $('#tabs-ul-li-06').show();
+        }
+        
+        localStorage.setItem("check-1-"+gadgetId, check1ls);
+        localStorage.setItem("check-2-"+gadgetId, check2ls);
+        localStorage.setItem("check-3-"+gadgetId, check3ls);
+        localStorage.setItem("check-4-"+gadgetId, check4ls);
+        localStorage.setItem("check-5-"+gadgetId, check5ls);
+        localStorage.setItem("check-6-"+gadgetId, check6ls);
+        
+        
+        updateGameHeight();
+        
     }
     function checkHideTabsLS() {
         var check1LS = localStorage.getItem("check-1-"+gadgetId);
@@ -2517,6 +2517,11 @@ $(function () {
     
     $("#checkbox-01").prop("checked", false);
     $("#checkbox-02").prop("checked", false);
+    
+    $("#check-1, #check-3, #check-4, #check-5, #check-6").prop("checked", true);
+    
+    
+    
     
     
     $('#appwidth').click( function () { 
