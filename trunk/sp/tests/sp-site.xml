@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs title="__MSG_title__" screenshot="__MSG_thumbnail__" thumbnail="__MSG_thumbnail__" description="__MSG_description__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="36">
+<ModulePrefs title="__MSG_title__" screenshot="__MSG_thumbnail__" thumbnail="__MSG_thumbnail__" description="__MSG_description__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="39">
     <Require feature="views" />
     <Require feature="dynamic-height" />
     <Locale lang="all">
@@ -201,21 +201,53 @@
     </Locale>
 </ModulePrefs>
 <Content type="html" view="home">
-    <![CDATA[
-    <!DOCTYPE html>
-    <link type="text/css" rel="stylesheet" href="http://cws-mg.googlecode.com/svn/trunk/mg/en/js/mg-site-homeview.css" />
-    <script type="text/javascript">
-        function goToView(dest) {
-              var supported_views = gadgets.views.getSupportedViews();
-              gadgets.views.requestNavigateTo(supported_views[dest]);
-            };
-    </script>
-    <div id="ig-homeview-div" onclick="goToView('canvas');">
-        <div id="thumb-play-button">
-            <img id="ig-home-thumb" src="__MSG_thumbnail__" /><a id="a-ig-home" href="javascript:goToView('canvas')">Play</a>
-        </div>
-    </div>
-    ]]>
+<![CDATA[
+<!DOCTYPE html>
+<link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
+<div id="ig-homeview-div">
+    <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
+    <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
+</div>
+<div id ="ig-homeview-div-2">
+    <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
+    <div id ="collapse-div"><img id="collapse-icon" src="http://sites.google.com/site/onlinegames01org/control_up.png" /></div>
+</div>
+<div id="ig-homeview-content"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    
+    var urlParams = gadgets.util.getUrlParameters();
+    var language = urlParams['lang'];
+    var country = urlParams['country'];
+    
+    $('#expand-div').on('click', function() {
+        $('#ig-homeview-content').html('<iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fpt_BR%2Ffl%2Fsp-site.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=5e1e33d6ed1aa906&gadgetId=113595717453088919560" width="100%"></iframe>');
+        
+        $('#ig-homeview-div').hide();
+        $('#ig-homeview-div-2').show();
+        
+        gadgets.window.adjustHeight();
+        
+    });
+    
+    $(function () {
+        $('#collapse-div').on('click', function() {
+                $('#ig-homeview-content').empty();
+                
+                $(this).parent().hide();
+                
+                $('#ig-homeview-div').show();
+                
+                gadgets.window.adjustHeight();
+            });
+        $('#ig-homeview-div-2').hide();
+        
+        gadgets.window.adjustHeight();
+    });
+
+</script>
+
+]]>
 </Content>
 <Content type="html" view="canvas" preferred_width="970">
 <![CDATA[
@@ -495,6 +527,16 @@
         
         
     });
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31916771-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>
 ]]>
 </Content>
