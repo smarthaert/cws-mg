@@ -13,25 +13,25 @@
     
     
     if (language === 'pt') {
-        langCountry = "pt-BR";
-    } else if (language === 'en') {
-        langCountry = "en-US";
-    } else if (language === 'fr') {
-        langCountry = "fr-FR";
-    } else if (language === 'de') {
-        langCountry = "de-DE";
-    } else if (language === 'it') {
-        langCountry = "it-IT";
-    } else if (language === 'nl') {
-        langCountry = "nl-NL";
-    } else if (language === 'pl') {
-        langCountry = "pl-PL";
-    } else if (language === 'es') {
-        langCountry = "es-ES";
-    } else if (language === 'sv') {
-        langCountry = "sv-SE";
-    } else {
-        langCountry = "en-US";
+            langCountry = "pt-BR";
+        } else if (language === 'en') {
+            langCountry = "en-US";
+        } else if (language === 'fr') {
+            langCountry = "fr-FR";
+        } else if (language === 'de') {
+            langCountry = "de-DE";
+        } else if (language === 'it') {
+            langCountry = "it-IT";
+        } else if (language === 'nl') {
+            langCountry = "nl-NL";
+        } else if (language === 'pl') {
+            langCountry = "pl-PL";
+        } else if (language === 'es') {
+            langCountry = "es-ES";
+        } else if (language === 'sv') {
+            langCountry = "sv-SE";
+        } else {
+            langCountry = "en-US";
     }
     
     
@@ -407,7 +407,7 @@
 
         var params = {};
         params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-        var MY_URL = "http://publishers.spilgames.com/rss?q="+searchTerms+"&format=json";
+        var MY_URL = "http://publishers.spilgames.com/rss?q="+searchTerms+"&lang="+ langCountry +"&format=json";
         gadgets.io.makeRequest(MY_URL, callbackSearch, params);
         
         localStorage.setItem("searchBoxValue-"+gadgetId, txt);
