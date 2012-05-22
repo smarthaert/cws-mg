@@ -203,7 +203,7 @@
 <Content type="html" view="home">
 <![CDATA[
 <!DOCTYPE html>
-<link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
+<link type="text/css" rel="stylesheet" href="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig-homeview.css" />
 <div id="ig-homeview-div">
     <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
     <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
@@ -253,8 +253,8 @@
 <![CDATA[
 <!DOCTYPE html>
 <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" />
-<link type="text/css" rel="stylesheet" href="http://cws-mg.googlecode.com/svn/trunk/sp/tests/sp-site-all-styles.css" />
-<link id="app-css" type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site.css" />
+<link type="text/css" rel="stylesheet" href="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig-all-styles.css" />
+<link id="app-css" type="text/css" rel="stylesheet" href="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig.css" />
 <div class="ui-widget-content ui-corner-all" style="border:0">
     <div id="app-container"><!--  app-container  -->
         <div class="ui-state-default" id="nav-bar-ts">
@@ -498,8 +498,8 @@
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js" type="text/javascript"></script>
-<script src="http://cws-mg.googlecode.com/svn/trunk/sp/tests/sp-site-themesw-ls.js" type="text/javascript"></script>
-<script src="http://cws-mg.googlecode.com/svn/trunk/sp/tests/sp-site-all-jq-plugins.js" type="text/javascript"></script>
+<script src="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig-themesw-ls.js" type="text/javascript"></script>
+<script src="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig-all-jq-plugins.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(function(){
@@ -510,7 +510,7 @@
     });
 </script>
 
-<script src="http://sites.google.com/site/onlinegames01org/sp-site.js" type="text/javascript"></script>
+<script src="http://cws-mg.googlecode.com/svn/trunk/sp/ig/mg/fl/sp-mg-ig.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(function(){
