@@ -4,9 +4,9 @@
     <Require feature="views" />
     <Require feature="dynamic-height" />
     <Locale lang="all">
-        <msg name="title">Madalin Games</msg>
+        <msg name="title">Puzzle ( Madalin Games )</msg>
         <msg name="description">Play online games</msg>
-        <msg name="thumbnail">http://lh6.googleusercontent.com/-f-kF6sKueZ4/T2vEbXf9J5I/AAAAAAAAPAY/lSGzUOGV1EI/s800/400x200-mg-thumb.png</msg>
+        <msg name="thumbnail">http://lh5.googleusercontent.com/-q1_ae0XITAM/T716pYHSTGI/AAAAAAAAPFc/OvpgTk8UehU/s800/puzzle-sp.png</msg>
         
         <msg name="new">New</msg>
         <msg name="allgames">all games</msg>
@@ -70,7 +70,7 @@
         <msg name="lastgame">Load last played game on startup</msg>
     </Locale>
     <Locale lang="pt">
-        <msg name="title">Madalin Jogos</msg>
+        <msg name="title">Quebra-cabeça ( Madalin Jogos )</msg>
         <msg name="description">Jogar jogos online</msg>
         
         <msg name="new">novo</msg>
@@ -135,7 +135,7 @@
         <msg name="lastgame">Carga passado jogado jogo</msg>
     </Locale>
     <Locale lang="ro">
-        <msg name="title">Madalin Jocuri</msg>
+        <msg name="title">Jocuri Puzzle ( Madalin )</msg>
         <msg name="description">Joaca jocuri online</msg>
         
         <msg name="new">Nou</msg>
@@ -206,11 +206,11 @@
     <link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/sp-site-homeview.css" />
     <div id="ig-homeview-div">
         <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
-        <div id ="expand-div"><img id="expand-icon" src="http://sites.google.com/site/onlinegames01org/arrow_expand.png" /></div>
+        <div id ="expand-div"><img id="expand-icon" src="http://lh5.googleusercontent.com/-v1uCXLCx6bE/T717chIBIZI/AAAAAAAAPFo/mnenEMtPTIQ/s800/arrow_expand.png" /></div>
     </div>
     <div id ="ig-homeview-div-2">
         <div class ="thumb-div"><img class="ig-home-thumb" src="__MSG_thumbnail__" /></div>
-        <div id ="collapse-div"><img id="collapse-icon" src="http://sites.google.com/site/onlinegames01org/control_up.png" /></div>
+        <div id ="collapse-div"><img id="collapse-icon" src="http://lh6.googleusercontent.com/-UqNm29uOOHE/T717cl_C5eI/AAAAAAAAPFk/eg8BVt-uynw/s800/control_up.png" /></div>
     </div>
     <div id="ig-homeview-content"></div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
