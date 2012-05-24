@@ -2387,7 +2387,7 @@ $(function () {
     // check if check1_LS exists
     var check1_LS = localStorage.getItem("check-1-"+gadgetId);
     if ( !check1_LS ) {
-        $("#tabs").tabs( "select" , 2 )
+        $("#tabs").tabs( "select" , 4 )
     }
     
 	$(".ui-tabs .innertabs").tabs({
@@ -2521,7 +2521,7 @@ $(function () {
     $("#checkbox-01").prop("checked", false);
     $("#checkbox-02").prop("checked", false);
     
-    $("#check-1, #check-2, #check-3, #check-6").prop("checked", true);
+    $("#check-1, #check-2, #check-3, #check-4, #check-6").prop("checked", true);
     
     
     $('#appwidth').click( function () { 
