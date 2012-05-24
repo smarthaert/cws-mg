@@ -1,5 +1,5 @@
 
-// variables
+//  variables
     var title, description, gameSource;
     var checkbox01State, checkbox02State;
     
@@ -48,7 +48,7 @@
     }
 //
 
-//    functions set-1
+//  functions set-1
 
     function adjustHeight() { 
         window.setTimeout( function () { gadgets.window.adjustHeight(); } , 10);
@@ -108,11 +108,6 @@
     function addAjaxLoaderGif() {
         $('.ui-tabs .innertabs > .ui-tabs-panel').html('<div class="loader-cont ui-corner-all"><img class="ajax-loader-gif" src="http://madalin-games.googlecode.com/svn/trunk/ork/mochi/css-img/ajax-loader.gif" /><span class="loader-span">loading...</span></div>');
     }
-    
-//
-
-//    functions set-2
-
     function myGameUserPref() {
         
         var myGameURL = $('#gameswf').val();
@@ -397,7 +392,9 @@
         localStorage.clear();
     }
     
-    // search box functions
+//
+    
+//  search box functions
     
     function getSearchJsonData() {
         
@@ -466,11 +463,10 @@
         }, 50);
     }
 
-    
 //
 
 
-//    functions loadHtmlInnertabs()
+//  functions loadHtmlInnertabs()
 
     function loadHtmlInnertabs01() {
         var $tabs = $('#tabs').tabs();
@@ -564,7 +560,7 @@
 //
 
 
-//   innertabs makeRequest()
+//  innertabs makeRequest()
 
 
  //	Innertabs01
@@ -2245,7 +2241,8 @@
 
 
 
-// document.ready
+//  document.ready
+
 $(function () {
         
   //   other - start
@@ -2287,7 +2284,7 @@ $(function () {
     
   //
   
-  //  searchForm script from   http://thefinishedbox.com/freebies/scripts/jquery-animated-search/
+  //  searchForm script
     
     
    //
@@ -2386,6 +2383,12 @@ $(function () {
 	    select: function(event, ui) {
                 }
     });
+    
+    // check if check1_LS exists
+    var check1_LS = localStorage.getItem("check-1-"+gadgetId);
+    if ( !check1_LS ) {
+        $("#tabs").tabs( "select" , 1 )
+    }
     
 	$(".ui-tabs .innertabs").tabs({
 	    fx: {   height:'toggle',  opacity:'toggle', duration:400    },
@@ -2521,9 +2524,6 @@ $(function () {
     $("#check-1, #check-3, #check-4, #check-5, #check-6").prop("checked", true);
     
     
-    
-    
-    
     $('#appwidth').click( function () { 
             $("#checkbox-01").trigger('click'); 
             updateAppSettings();
@@ -2638,7 +2638,7 @@ $(function () {
             show: 'fade',
             hide: 'slide',
             width: 840,
-            position: [ 'center', 112 ]
+            position: [ 'center', 102 ]
          });
     
 	$( "#please-remove-dialog" ).dialog({
