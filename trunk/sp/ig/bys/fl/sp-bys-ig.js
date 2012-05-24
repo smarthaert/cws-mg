@@ -151,7 +151,7 @@
         var language = urlParams['lang'];
         var country = urlParams['country'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fgirls%2Fsp-grls-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=db732d6e1daa86a0&gadgetId=109470666780573716033" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fbys%2Fsp-bys-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=87af6f13a0f771d3&gadgetId=106076965437172832281" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
@@ -2521,7 +2521,7 @@ $(function () {
     $("#checkbox-01").prop("checked", false);
     $("#checkbox-02").prop("checked", false);
     
-    $("#check-1, #check-2, #check-4, #check-5, #check-6").prop("checked", true);
+    $("#check-1, #check-2, #check-3, #check-6").prop("checked", true);
     
     
     $('#appwidth').click( function () { 
