@@ -2387,7 +2387,7 @@ $(function () {
     // check if check1_LS exists
     var check1_LS = localStorage.getItem("check-1-"+gadgetId);
     if ( !check1_LS ) {
-        $("#tabs").tabs( "select" , 1 )
+        $("#tabs").tabs( "select" , 2 )
     }
     
 	$(".ui-tabs .innertabs").tabs({
