@@ -151,7 +151,7 @@
         var language = urlParams['lang'];
         var country = urlParams['country'];
         
-        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fgirls%2Fsp-grls-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=db732d6e1daa86a0&gadgetId=109470666780573716033" width="100%"></iframe></textarea></div>');
+        $("#embed-dialog").html('<div style="text-align:center;margin-top:20px;margin-bottom:20px"><textarea style="margin:auto;width:90%;height:90px"><iframe frameborder="0" height="1100px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fgirls%2Fapp%2Fpunkprincess%2Fpnk-pr-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=1aac6c4417ff300c&gadgetId=104684136903326404214" width="100%"></iframe></textarea></div>');
         
         $("#embed-dialog").dialog({
             width: 700,
@@ -341,6 +341,10 @@
         }
     }
     function loadDefaultGame() {
+        
+        $( "#gamediv-wrapper" ).dialog('open');
+        
+        $('#gametd').html('<embed class="embedgame" src="http://www8.agame.com/mirror/flash/p/punk_princess_show.swf" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
     }
     function checkbox02UserPref() {
         
