@@ -341,6 +341,10 @@
         }
     }
     function loadDefaultGame() {
+        
+        $( "#gamediv-wrapper" ).dialog('open');
+        
+        $('#gametd').html('<embed class="embedgame" src="http://www8.agame.com/mirror/flash/p/punk_princess_show.swf" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
     }
     function checkbox02UserPref() {
         
