@@ -2880,7 +2880,7 @@ $(function () {
     updateAppSettings();
     
     // append gplus iframe
-    $("#app-container").append('<div style="text-align:center;margin-bottom:30px"><iframe frameborder="0" scrolling="yes" src="http://m.google.com/app/plus/" width="786" height="600" style="margin:auto"></iframe></div>');
+    $("#app-container").append('<div style="text-align:center;margin-bottom:30px"><iframe frameborder="0" scrolling="yes" src="http://m.google.com/app/plus/" width="770" height="600" style="margin:auto"></iframe></div>');
     
     adjustHeight();
   //
