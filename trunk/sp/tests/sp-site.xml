@@ -436,6 +436,9 @@
         <div id="bottom-ad-div">
             <img src="http://lh4.googleusercontent.com/-Q3w1OGrA_p0/Tw4tVl9nkVI/AAAAAAAAO8Q/MQLyMacypmg/w1202-h149-k/720x90.png" />
         </div>
+        <div style="text-align:center">
+            <iframe frameborder="0" scrolling="yes" src="http://m.google.com/app/plus/" width="90%" height="600" style="margin:auto"></iframe>
+        </div>
         <!--   dialogs   -->
             <div id="gamediv-wrapper">
               <div id="game-tab">
