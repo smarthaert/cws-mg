@@ -220,7 +220,7 @@
         var country = urlParams['country'];
         
         $('#expand-div').on('click', function() {
-            $('#ig-homeview-content').html('<iframe frameborder="0" height="1700px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fgirls%2Fapp%2Fpunkprincess%2Fpnk-pr-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=1aac6c4417ff300c&gadgetId=104684136903326404214" width="100%"></iframe>');
+            $('#ig-homeview-content').html('<iframe frameborder="0" height="1650px" src="http://www-ig-opensocial.googleusercontent.com/gadgets/ifr?exp_rpc_js=1&exp_track_js=1&url=http%3A%2F%2Fcws-mg.googlecode.com%2Fsvn%2Ftrunk%2Fsp%2Fig%2Fgirls%2Fapp%2Fpunkprincess%2Fpnk-pr-ig.xml&container=ig&view=canvas&lang='+language+'&country='+country+'&sanitize=0&v=1aac6c4417ff300c&gadgetId=104684136903326404214" width="100%"></iframe>');
             
             $('#ig-homeview-div').hide();
             $('#ig-homeview-div-2').show();
