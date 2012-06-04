@@ -1,0 +1,43 @@
+// API callback
+showMyVideos({"version":"1.0","encoding":"UTF-8","feed":{"xmlns":"http://www.w3.org/2005/Atom","xmlns$media":"http://search.yahoo.com/mrss/","xmlns$openSearch":"http://a9.com/-/spec/opensearchrss/1.0/","xmlns$gd":"http://schemas.google.com/g/2005","xmlns$yt":"http://gdata.youtube.com/schemas/2007","id":{"$t":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed"},"updated":{"$t":"2012-06-01T17:47:15.624-07:00"},"category":[{"scheme":"http://schemas.google.com/g/2005#kind","term":"http://gdata.youtube.com/schemas/2007#video"}],"title":{"$t":"Most Viewed","type":"text"},"logo":{"$t":"http://www.youtube.com/img/pic_youtubelogo_123x63.gif"},"link":[{"rel":"alternate","type":"text/html","href":"http://www.youtube.com/browse?s=mp"},{"rel":"http://schemas.google.com/g/2005#feed","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed"},{"rel":"http://schemas.google.com/g/2005#batch","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed/batch"},{"rel":"self","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed?alt=json-in-script&start-index=1&max-results=1&format=5&time=this_month"},{"rel":"next","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed?alt=json-in-script&start-index=2&max-results=1&format=5&time=this_month"}],"author":[{"name":{"$t":"YouTube"},"uri":{"$t":"http://www.youtube.com/"}}],"generator":{"$t":"YouTube data API","version":"2.1","uri":"http://gdata.youtube.com"},"openSearch$totalResults":{"$t":99},"openSearch$startIndex":{"$t":1},"openSearch$itemsPerPage":{"$t":1},
+
+
+"entry":[{
+
+"id":{"$t":"http://gdata.youtube.com/feeds/api/videos/4hUDUU2GD6I"},
+
+
+"published":{"$t":"2012-05-18T21:11:47.000Z"},
+
+
+"updated":{"$t":"2012-06-02T00:28:06.000Z"},
+
+
+"category":[{"scheme":"http://schemas.google.com/g/2005#kind","term":"http://gdata.youtube.com/schemas/2007#video"},{"scheme":"http://gdata.youtube.com/schemas/2007/categories.cat","term":"Entertainment","label":"Entertainment"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"bud"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"budweiser"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"anderson silva"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"steven seagal"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"comercial"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"UFC"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"MMA"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"The Great Preparation"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"Lyoto Machida"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"Mr Machida"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"Bruce Buffer"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"Dan Miragliotta"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"filme"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"filmes"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"cinema"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"desafio"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"great times are coming"},{"scheme":"http://gdata.youtube.com/schemas/2007/keywords.cat","term":"ufc is coming"}],
+
+
+"title":{"$t":"Budweiser: The Great Preparation","type":"text"},
+
+
+"content":{"$t":"Anderson Silva, Steven Seagal e uma Bud. Veja o que acontece nesse encontro e na preparação do Anderson para seus grandes desafios. UFC is coming. Great times are coming. Curta e acesse: http://www.facebook.com/BudweiserBrasil","type":"text"},
+
+
+"link":[{"rel":"alternate","type":"text/html","href":"http://www.youtube.com/watch?v=4hUDUU2GD6I&feature=youtube_gdata"},{"rel":"http://gdata.youtube.com/schemas/2007#video.responses","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/videos/4hUDUU2GD6I/responses"},{"rel":"http://gdata.youtube.com/schemas/2007#video.related","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/videos/4hUDUU2GD6I/related"},{"rel":"http://gdata.youtube.com/schemas/2007#mobile","type":"text/html","href":"http://m.youtube.com/details?v=4hUDUU2GD6I"},{"rel":"self","type":"application/atom+xml","href":"http://gdata.youtube.com/feeds/api/standardfeeds/br/most_viewed/v/4hUDUU2GD6I"}],
+
+
+"author":[{"name":{"$t":"BudBrasilOficial"},"uri":{"$t":"http://gdata.youtube.com/feeds/api/users/BudBrasilOficial"}}],
+
+
+"gd$comments":{"gd$feedLink":{"rel":"http://gdata.youtube.com/schemas/2007#comments","href":"http://gdata.youtube.com/feeds/api/videos/4hUDUU2GD6I/comments","countHint":787}},
+
+
+"yt$hd":{},
+
+
+"media$group":{"media$category":[{"$t":"Entertainment","label":"Entertainment","scheme":"http://gdata.youtube.com/schemas/2007/categories.cat"}],"media$content":[{"url":"http://www.youtube.com/v/4hUDUU2GD6I?version=3&f=standard&app=youtube_gdata","type":"application/x-shockwave-flash","medium":"video","isDefault":"true","expression":"full","duration":91,"yt$format":5},{"url":"rtsp://v7.cache8.c.youtube.com/CiQLENy73wIaGwmiD4ZNUQMV4hMYDSANFEgGUghzdGFuZGFyZAw=/0/0/0/video.3gp","type":"video/3gpp","medium":"video","expression":"full","duration":91,"yt$format":1},{"url":"rtsp://v8.cache4.c.youtube.com/CiQLENy73wIaGwmiD4ZNUQMV4hMYESARFEgGUghzdGFuZGFyZAw=/0/0/0/video.3gp","type":"video/3gpp","medium":"video","expression":"full","duration":91,"yt$format":6}],"media$description":{"$t":"Anderson Silva, Steven Seagal e uma Bud. Veja o que acontece nesse encontro e na preparação do Anderson para seus grandes desafios. UFC is coming. Great times are coming. Curta e acesse: http://www.facebook.com/BudweiserBrasil","type":"plain"},"media$keywords":{"$t":"bud, budweiser, anderson silva, steven seagal, comercial, UFC, MMA, The Great Preparation, Lyoto Machida, Mr Machida, Bruce Buffer, Dan Miragliotta, filme, filmes, cinema, desafio, great times are coming, ufc is coming"},"media$player":[{"url":"http://www.youtube.com/watch?v=4hUDUU2GD6I&feature=youtube_gdata_player"}],"media$thumbnail":[{"url":"http://i.ytimg.com/vi/4hUDUU2GD6I/0.jpg","height":360,"width":480,"time":"00:00:45.500"},{"url":"http://i.ytimg.com/vi/4hUDUU2GD6I/1.jpg","height":90,"width":120,"time":"00:00:22.750"},{"url":"http://i.ytimg.com/vi/4hUDUU2GD6I/2.jpg","height":90,"width":120,"time":"00:00:45.500"},{"url":"http://i.ytimg.com/vi/4hUDUU2GD6I/3.jpg","height":90,"width":120,"time":"00:01:08.250"}],"media$title":{"$t":"Budweiser: The Great Preparation","type":"plain"},"yt$duration":{"seconds":"91"}},
+
+
+"gd$rating":{"average":4.7539334,"max":5,"min":1,"numRaters":6356,"rel":"http://schemas.google.com/g/2005#overall"},
+
+
+"yt$statistics":{"favoriteCount":"1333","viewCount":"11467509"}}]}});
