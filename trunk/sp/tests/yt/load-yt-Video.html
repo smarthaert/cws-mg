@@ -3,47 +3,7 @@
 <head>
 <title>My Videos</title>
 <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" />
-<style>
-body {
-    margin: 0;
-    padding: 10px;
-    font-family:Helvetica, Arial, sans-serif;
-    font-weight:bold;
-    color: #333333;
-}
-#yt-container {
-    width: 710px;
-    text-align: center;
-}
-#playerContainer {
-    width: 500px;
-    height: 300px;
-    margin: auto;
-}
-#videos {
-    height: 400px;
-    overflow-y: scroll;
-}
-.titlec {
-    font-size: 70%;
-    line-height: 80%;
-}
-ul.videos li {
-  float: left;
-  width: 170px;
-  height: 125px;
-  margin-bottom: 1em;
-  cursor: pointer;
-}
-ul.videos
-{
-    margin-top: 0em;
-  margin-bottom: 1em;
-  padding-left : 0em;
-  margin-left: 0em;
-  list-style: none;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="http://sites.google.com/site/onlinegames01org/yt-app.css" />
 <script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -84,7 +44,7 @@ function showMyVideos(data) {
 </div>
 <script 
     type="text/javascript" 
-    src="http://gdata.youtube.com/feeds/api/standardfeeds/BR/most_viewed?time=this_month&alt=json-in-script&callback=showMyVideos&max-results=50&format=5">
+    src="http://gdata.youtube.com/feeds/api/standardfeeds/BR/most_viewed?time=this_month&alt=json-in-script&callback=showMyVideos&start-index=50&max-results=50&format=5">
 </script>
 </body>
 </html>
