@@ -2654,7 +2654,7 @@ $(function () {
         
             $('#yt-video-dialog').dialog('open');
             
-            $('#yt-video-dialog').html('<div id="yt-video"><iframe frameborder="0" height="680px" src="http://cws-mg.googlecode.com/svn/trunk/yt/1/yt-app.html" width="100%"></iframe></div>');
+            $('#yt-video-dialog').html('<div id="yt-video"><iframe frameborder="0" height="720px" src="http://cws-mg.googlecode.com/svn/trunk/yt/1/yt-app.html" width="100%"></iframe></div>');
             
         });
     //
