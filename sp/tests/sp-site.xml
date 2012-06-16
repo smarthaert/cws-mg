@@ -294,8 +294,6 @@
             <li id="tabs-ul-li-07"><a id="favorites-ul-li" href="#favorites"><span class="ui-icon ui-icon-heart" style="float:left;position:relative;top:-2px;height:13px;"></span>&nbsp;__MSG_favorites__&nbsp;</a></li>
             <li id="tabs-ul-li-08"><a id="history-ul-li" href="#history">__MSG_history__</a></li>
             <li id="tabs-ul-li-09"><a id="a-search-tab" href="#search-tab"><span class="ui-icon ui-icon-search" style="position:relative;top:-2px;height:14px;"></span></a></li>
-            
-            <li id="tabs-ul-li-10"><a id="yt-video-tab" href="#yt-video">video</a></li>
           </ul>
           <div class="ui-tabs-hide" id="tabs-1">
             <div class="ui-tabs innertabs" id="innertabs01">
@@ -430,9 +428,6 @@
               </ul>
               <div class="ui-tabs-hide" id="search-innertab-1"></div>
             </div>
-          </div>
-          <div class="ui-tabs-hide" id="yt-video">
-            <iframe frameborder="0" height="680px" src="http://cws-mg.googlecode.com/svn/trunk/yt/1/yt-app.html" width="100%"></iframe>
           </div>
         </div>
         <div id="Pagination" class="pagination">

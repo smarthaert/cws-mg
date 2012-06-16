@@ -2382,7 +2382,7 @@ $(function () {
   //  tabs and innertabs
 	
     $("#tabs").tabs({ 
-        fx: { height:'toggle',  opacity:'toggle', duration:400   },
+        fx: { opacity:'toggle', duration:400   },
         cookie:{    expires: 365    },
 	    select: function(event, ui) {
                 }
@@ -2633,6 +2633,33 @@ $(function () {
   //   other
     
     $('button').button();
+    
+    
+    $('#app-container').append('<div id="yt-video-dialog"></div>');
+    
+    $('.sf-menu').append('<li class="ui-state-default"><a class="ret-false" id="open-yt-video-dialog" href="#">&nbsp;video</a></li>');
+    
+    $( "#yt-video-dialog" ).dialog({
+            draggable: false,
+            resizable: false,
+            autoOpen: false,
+            modal: true,
+            show: 'fade',
+            hide: 'slide',
+            width: 840,
+            position: [ 'center', 50 ]
+         });
+    
+    $("#open-yt-video-dialog").on('click', function () {
+        
+            $('#yt-video-dialog').dialog('open');
+            
+            $('#yt-video-dialog').html('<div id="yt-video"><iframe frameborder="0" height="680px" src="http://cws-mg.googlecode.com/svn/trunk/yt/1/yt-app.html" width="100%"></iframe></div>');
+            
+        });
+    //
+    
+    
     
     $( "#gamediv-wrapper" ).dialog({
             draggable: false,
