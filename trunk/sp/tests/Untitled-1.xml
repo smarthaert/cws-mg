@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<ModulePrefs title="__MSG_title__" screenshot="__MSG_screenshot__" thumbnail="__MSG_thumbnail__" description="Title: __MSG_gameTitle__ * Description: __MSG_description__ * How to Play: __MSG_howtoplay__" author="Madalin Stanciu" author_email="madalinstanciu16@gmail.com" height="1100">
+    <Require feature="opensocial-0.8" />
+    <Require feature="views" />
+    <Require feature="dynamic-height" />
+    <Locale lang="all">
+        <msg name="title">168 [ h-scroll madalin games ]</msg>
+        <msg name="gameTitle">A Small Car</msg>
+        <msg name="description">Keep the car on the road for a crazy-good time!</msg>
+		<msg name="howtoplay">Up/W = Accelerate Down/S = Brake Left/Right or A/D = Steer Space = Handbrake Cross the finish line as quickly as possible, but look out—there are no guardrails on this road!</msg>
+        <msg name="gameSource">http://www8.agame.com/mirror/flash/a/ASmallCar/ASmallCar.swf</msg>
+        <msg name="screenshot">http://www.agame.com/200x120/7/1/150271.jpg</msg>
+        <msg name="thumbnail">http://www.agame.com/200x120/7/1/150271.jpg</msg>
+        
+        <msg name="new">New</msg>
+        <msg name="favorites">Favorites</msg>
+        <msg name="myfriends">My Friends</msg>
+        <msg name="gotoPage">Ask me if I want to go to last game I played</msg>
+        <msg name="settingsupdates">Automatically post updates for my friends</msg>
+        <msg name="appwidth">Application width: 950px</msg>
+        <msg name="help">help</msg>
+        <msg name="DressUp">Dress</msg>
+        <msg name="MakeUp">Make-Up</msg>
+        <msg name="MakeOver">MakeOver</msg>
+        <msg name="play">Play</msg>
+        <msg name="settings">settings</msg>
+        <msg name="game">Game</msg>
+        <msg name="madalingames">Madalin Games</msg>
+        <msg name="back">Back</msg>
+        <msg name="games">Games</msg>
+        <msg name="action">Action</msg>
+        <msg name="adventure">Adventure</msg>
+        <msg name="Physics">Physics</msg>
+        <msg name="Racing">Racing</msg>
+        <msg name="Sports">Sports</msg>
+        <msg name="TowerDefense">Tower Defense</msg>
+        <msg name="puzzle">Puzzle</msg>
+        <msg name="puzzShort">Puzzle</msg>
+        <msg name="skill">Skill</msg>
+        <msg name="skillgames">Skill Games</msg>
+        <msg name="girls">Girls Games</msg>
+        <msg name="girlsgames">Girls Games</msg>
+        <msg name="girlsshort">Girls</msg>
+        <msg name="boysgames">Boys Games</msg>
+        <msg name="othercateg">Other</msg>
+        <msg name="isplaying">is playing</msg>
+        <msg name="madalingames02">madalin games</msg>
+        <msg name="gamesapps">games apps</msg>
+        <msg name="categories">categories</msg>
+        <msg name="posttoupdates">post to updates</msg>
+        <msg name="initialText">Switch Theme</msg>
+        <msg name="buttonPreText">Theme:</msg>
+        <msg name="home">Home</msg>
+        <msg name="relatedgames">other games</msg>
+        <msg name="dialogtitle">Load last played game?</msg>
+        <msg name="dialogtext">Do you want to load the last game you played?</msg>
+        <msg name="sendmessage">Send a message</msg>
+        <msg name="messageTitle">Invite message</msg>
+        <msg name="messageBody">Hey! do you want to try this app , it's way awesome!</msg>
+        <msg name="updateposted">Update posted to my friends.</msg>
+        <msg name="lastgame">Load last played game on startup</msg>
+    </Locale>
+    <Locale lang="pt">
+        <msg name="title">168 [ h-scroll madalin jogos ]</msg>
+        <msg name="gameTitle">Um Carro Pequeno</msg>
+        <msg name="description">Domine o carro e divirta-se!</msg>
+		<msg name="howtoplay">Para Cima/W = Acelerar Para Baixo/S = Frear Para Esquerda/Direita ou A/D = Dirigir Espaço = Freio de Mão Dirija até a chegada o mais rápido possível, dominando o carro dentro da estrada!</msg>
+        
+        <msg name="new">Novo</msg>
+        <msg name="favorites">Favoritos</msg>
+        <msg name="myfriends">Meus Amigos</msg>
+        <msg name="gotoPage">Pergunte-me se quero ir ao passado jogado jogo</msg>
+        <msg name="settingsupdates">Automaticamente postar atualizações para os meus amigos</msg>
+        <msg name="appwidth">Aplicativo largura: 950px</msg>
+        <msg name="help">ajuda</msg>
+        <msg name="DressUp">Vestir</msg>
+        <msg name="MakeUp">Maquiar</msg>
+        <msg name="MakeOver">Decoração</msg>
+        <msg name="play">Jogar</msg>
+        <msg name="settings">configurações</msg>
+        <msg name="game">Jogo</msg>
+        <msg name="madalingames">Madalin Jogos</msg>
+        <msg name="back">Atrás</msg>
+        <msg name="games">Jogos</msg>
+        <msg name="action">Ação</msg>
+        <msg name="adventure">Aventura</msg>
+        <msg name="Physics">Física</msg>
+        <msg name="Racing">Corrida</msg>
+        <msg name="Sports">Esportes</msg>
+        <msg name="TowerDefense">Defender a Torre</msg>
+        <msg name="puzzle">Quebra-cabeça</msg>
+        <msg name="puzzShort">Quebra-c..</msg>
+        <msg name="skill">Habili..</msg>
+        <msg name="skillgames">Habilidade</msg>
+        <msg name="girls">Meninas</msg>
+        <msg name="girlsgames">Meninas Jogos</msg>
+        <msg name="girlsshort">Meninas</msg>
+        <msg name="boysgames">Meninos</msg>
+        <msg name="othercateg">Outros</msg>
+        <msg name="isplaying">está jogar</msg>
+        <msg name="madalingames02">madalin jogos</msg>
+        <msg name="gamesapps">jogos apps</msg>
+        <msg name="categories">categorias</msg>
+        <msg name="posttoupdates">postar atualizações</msg>
+        <msg name="initialText">Alterar o Tema</msg>
+        <msg name="buttonPreText">Tema:</msg>
+        <msg name="home">Início</msg>
+        <msg name="relatedgames">outros jogos</msg>
+        <msg name="dialogtitle">Carga passado jogado jogo?</msg>
+        <msg name="dialogtext">Quer carga passado jogado jogo?</msg>
+        <msg name="sendmessage">Enviar uma mensagem</msg>
+        <msg name="messageTitle">Convidar mensagem</msg>
+        <msg name="messageBody">Hey! você quer tentar esse aplicativo , é incrível!</msg>
+        <msg name="updateposted">Atualização postado para os meus amigos.</msg>
+        <msg name="lastgame">Carga passado jogado jogo</msg>
+    </Locale>
+</ModulePrefs>
+<Content type="html" view="canvas" preferred_width="950">
+<![CDATA[
+<!--ALm6fM3QISIzZ4sw6zb+1iMozTQTBMseHAHQZmaTn57k5oMQQFPd06KxA2x4NG7N0aoLlLJ9iu7Wbp9+KVAqSjgGyWzOwcHogZ+F/FQhkxl1zDJD4NK4cPSZ5RBfnbRLNfZJrEan/GDlF7ZFj68/5EEjnUKgGhx0GpeAD26qchT15WZxRusGyoPR+Vuj1Q3e8K+6d9EXI24g-->
+<!DOCTYPE html>
+<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" />
+<link type="text/css" rel="stylesheet" href="http://madalin-games.googlecode.com/svn/trunk/javascript-files/css/all-jq-plugins-styles.css" />
+<link type="text/css" rel="stylesheet" href="http://madalin-games.googlecode.com/svn/trunk/ork/mg-hs/js/mg-hs-series-ork.css" />
+<style type="text/css">
+</style>
+<div id="nav-bar">
+    <ul class="sf-menu">
+      <li><a class="ret-false" id="app-settings" href="#"><span class="ui-icon ui-icon-gear" style="float:left;position:relative;top:-1px;"></span>&nbsp;config</a></li>
+      <li><a class="ret-false app-refresh" href="#"><span class="ui-icon ui-icon-refresh" style="float:left;position:relative;top:-1px;left:1px;"></span>&nbsp;</a></li>
+      <li><a class="ret-false" id="help" href="#"><span class="ui-icon ui-icon-help" style="float:left;position:relative;top:-1px;"></span>&nbsp;</a></li>
+      <li><a class="ret-false" id="play-my-game" href="#"><span class="ui-icon ui-icon-star" style="float:left;position:relative;top:-1px;"></span>&nbsp;meu jogo</a>
+          <ul>
+            <li><a class="ret-false" id="open-dialog-form" href="#">adicionar jogo</a></li>
+          </ul>
+      </li>
+    </ul>
+</div>
+<div class="ui-widget-content ui-corner-all" id="app-container">
+    <div id="top-ad-div">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-9990175436387830";
+        /* spil-hs-Top */
+        google_ad_slot = "6581831981";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+    
+    <div id="container-wrapper">
+        <div id="container" class="ui-widget-content ui-corner-all">
+            <div id="gamediv-wrapper-container">
+                <div id="div-nav-tabs">
+                    <a class="scroll-nav" id="scroll-nav-tabs" href="#tabs-container">__MSG_relatedgames__</a>
+                </div>
+                <div id="gamediv-wrapper">
+                    <div id="game-tab">
+                        <table id="gametable" border="0" cellpadding="0" cellspacing="0">
+                            <tbody><tr><td id="gametd"></td></tr></tbody>
+                        </table>
+                        <span class="ui-icon ui-icon-grip-dotted-horizontal" style="margin:0px auto;"></span>
+                    </div>
+                    <div id="game-info">
+                        <span class="ui-icon ui-icon-info" id="info-icon-game"></span>
+                    </div>
+                    <div class="ui-widget-content ui-corner-all" id="game-description">
+                        <span class="game-title"></span>
+                        <span class="game-description"></span>
+                    </div>
+                </div><!--/gamediv-wrapper-->
+            </div><!--/gamediv-wrapper-container-->
+            
+            <div id="tabs-container">
+                <div id="div-nav-game">
+                    <a class="scroll-nav" id="scroll-nav-game" href="#gamediv-wrapper-container">__MSG_game__</a>
+                </div>
+                <div class="ui-tabs" id="tabs">
+                  <ul id="tabs-ul">
+                    <li><a href="#tabs-1">__MSG_DressUp__ | __MSG_MakeUp__ | __MSG_MakeOver__</a></li>
+                    <li><a href="#tabs-2">__MSG_girls__</a></li>
+                    <li><a href="#tabs-3">__MSG_puzzle__</a></li>
+                    <li><a href="#tabs-4">__MSG_skillgames__</a></li>
+                    <li><a href="#tabs-5">__MSG_action__</a></li>
+                    <li><a href="#tabs-6">__MSG_boysgames__</a></li>
+                    <li><a href="#tabs-7">__MSG_othercateg__</a></li>
+                    <li><a href="#favorites"><span class="ui-icon ui-icon-heart" style="float:left;position:relative;top:-2px;height:13px;"></span>&nbsp;__MSG_favorites__&nbsp;</a></li>
+                  </ul>
+                  <div class="ui-tabs-hide" id="tabs-1">
+                    <div class="ui-tabs innertabs" id="innertabs01">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs01-1">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-2">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-3">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-4">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-5">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-6">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-7">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-7-1">__MSG_DressUp__</a></li>
+                        <li><a href="#innertabs01-8">__MSG_MakeUp__</a></li>
+                        <li><a href="#innertabs01-9">__MSG_MakeUp__</a></li>
+                        <li><a href="#innertabs01-10">__MSG_MakeUp__</a></li>
+                        <li><a href="#innertabs01-11">__MSG_MakeOver__</a></li>
+                        <li><a href="#innertabs01-12">__MSG_MakeOver__</a></li>
+                        <li><a href="#innertabs01-13">__MSG_MakeOver__</a></li>
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs01-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-7"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-7-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-8"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-9"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-10"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-11"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-12"></div>
+                      <div class="ui-tabs-hide" id="innertabs01-13"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-2">
+                    <div class="ui-tabs innertabs" id="innertabs02">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs02-1">__MSG_girlsshort__ 1</a></li>
+                        <li><a href="#innertabs02-2">__MSG_girlsshort__ 2</a></li>
+                        <li><a href="#innertabs02-3">__MSG_girlsshort__ 3</a></li>
+                        <li><a href="#innertabs02-4">__MSG_girlsshort__ 4</a></li>
+                        <li><a href="#innertabs02-5">__MSG_girlsshort__ 5</a></li>
+                        <li><a href="#innertabs02-6">__MSG_girlsshort__ 6</a></li>
+                        <li><a href="#innertabs02-7">__MSG_girlsshort__ 7</a></li>
+                        <li><a href="#innertabs02-8">__MSG_girlsshort__ 8</a></li>
+                        <li><a href="#innertabs02-9">__MSG_girlsshort__ 9</a></li>
+                        <li><a href="#innertabs02-10">__MSG_girlsshort__ 10</a></li>
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs02-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-7"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-8"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-9"></div>
+                      <div class="ui-tabs-hide" id="innertabs02-10"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-3">
+                    <div class="ui-tabs innertabs" id="innertabs03">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs03-1">__MSG_puzzle__ 1</a></li>
+                        <li><a href="#innertabs03-2">__MSG_puzzle__ 2</a></li>
+                        <li><a href="#innertabs03-3">__MSG_puzzle__ 3</a></li>
+                        <li><a href="#innertabs03-4">__MSG_puzzle__ 4</a></li>
+                        <li><a href="#innertabs03-5">__MSG_puzzle__ 5</a></li>
+                        <li><a href="#innertabs03-6">__MSG_puzzle__ 6</a></li>
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs03-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs03-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs03-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs03-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs03-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs03-6"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-4">
+                    <div class="ui-tabs innertabs" id="innertabs04">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs04-1">__MSG_skillgames__ 1</a></li>
+                        <li><a href="#innertabs04-2">__MSG_skillgames__ 2</a></li>
+                        <li><a href="#innertabs04-3">__MSG_skillgames__ 3</a></li>
+                        <li><a href="#innertabs04-4">__MSG_skillgames__ 4</a></li>
+                        <li><a href="#innertabs04-5">__MSG_skillgames__ 5</a></li>
+                        <li><a href="#innertabs04-6">__MSG_skillgames__ 6</a></li>
+                        <li><a href="#innertabs04-7">__MSG_skillgames__ 7</a></li>
+                        <li><a href="#innertabs04-8">__MSG_skillgames__ 8</a></li>
+                        <li><a href="#innertabs04-9">__MSG_skillgames__ 9</a></li>
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs04-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-7"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-8"></div>
+                      <div class="ui-tabs-hide" id="innertabs04-9"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-5">
+                    <div class="ui-tabs innertabs" id="innertabs05">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs05-1">__MSG_action__ 1</a></li>
+                        <li><a href="#innertabs05-2">__MSG_action__ 2</a></li>
+                        <li><a href="#innertabs05-3">__MSG_action__ 3</a></li>
+                        <li><a href="#innertabs05-4">__MSG_action__ 4</a></li>
+                        <li><a href="#innertabs05-5">__MSG_adventure__ 5</a></li>
+                        <li><a href="#innertabs05-6">__MSG_adventure__ 6</a></li>
+                        <li><a href="#innertabs05-7">__MSG_adventure__ 7</a></li>          
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs05-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs05-7"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-6">
+                    <div class="ui-tabs innertabs" id="innertabs06">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs06-1">__MSG_Racing__ 1</a></li>
+                        <li><a href="#innertabs06-2">__MSG_Racing__ 2</a></li>
+                        <li><a href="#innertabs06-3">Shooting</a></li>
+                        <li><a href="#innertabs06-4">__MSG_Sports__</a></li>
+                        <li><a href="#innertabs06-5">__MSG_TowerDefense__</a></li>
+                        <li><a href="#innertabs06-6">Uphill Racing</a></li>
+                        <li><a href="#innertabs06-7">__MSG_Physics__</a></li>          
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs06-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs06-7"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="tabs-7">
+                    <div class="ui-tabs innertabs" id="innertabs07">
+                      <ul class="innertabs-ul">
+                        <li><a href="#innertabs07-1">Animal Games</a></li>
+                        <li><a href="#innertabs07-2">Bubble shooter</a></li>
+                        <li><a href="#innertabs07-3">Celebrity</a></li>
+                        <li><a href="#innertabs07-4">Fun</a></li>
+                        <li><a href="#innertabs07-5">Fun</a></li>
+                        <li><a href="#innertabs07-6">Hidden Obj</a></li>
+                        <li><a href="#innertabs07-7">Mahjong</a></li>
+                        <li><a href="#innertabs07-8">Simulation</a></li>
+                        <li><a href="#innertabs07-9">Simulation</a></li>
+                        <li><a href="#innertabs07-10">Time Manage</a></li>
+                        <li><a href="#innertabs07-11">Time Manage</a></li>
+                      </ul>
+                      <div class="ui-tabs-hide" id="innertabs07-1"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-2"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-3"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-4"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-5"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-6"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-7"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-8"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-9"></div>
+                      <div class="ui-tabs-hide" id="innertabs07-10"></div> 
+                      <div class="ui-tabs-hide" id="innertabs07-11"></div>
+                    </div>
+                  </div>
+                  <div class="ui-tabs-hide" id="favorites">
+                    <ul id="favorites-ul" class="connectedSortable ui-helper-reset">
+                      <li class="placeholder"><span>Add your favorite games here.</span><div class="ui-widget-content ui-corner-all" id="fav-help"><span class="ui-icon ui-icon-help"></span></div></li>
+                    </ul>
+                  </div>
+                </div>
+            </div><!--/tabs-container-->
+        </div><!--/container-->
+    </div><!--/container-wrapper-->
+
+    <div id="adsdiv" class="ui-widget-content ui-corner-all">
+            <table id='adstable' cellspacing="0">
+                <tbody>
+                <tr>
+                <td style="width:320px;">
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-9990175436387830";
+                    /* spil-hs-Left */
+                    google_ad_slot = "8469406274";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                </td>
+                <td style="width:320px;">
+                    <script type="text/javascript"><!--
+                    google_ad_client = "ca-pub-9990175436387830";
+                    /* spil-hs-Right */
+                    google_ad_slot = "4480615646";
+                    google_ad_width = 300;
+                    google_ad_height = 250;
+                    //-->
+                    </script>
+                    <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                </td>
+                <td style="width:148px;">
+    				<div style="width:130px;padding:4px 0 3px 0;background-color:#fff;margin:auto;">
+                        <a href="http://gan.doubleclick.net/gan_click?lid=41000000031469072&pubid=21000000000339673"><img     src="http://gan.doubleclick.net/gan_impression?lid=41000000031469072&pubid=21000000000339673" border=0 alt="Get Unlimited Access to Hundreds of Games"></a>
+    				</div>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+
+    <!--dialogs-->
+        <div id="settings-dialog">
+            <div id="inner-set-div">
+                <div class="ui-widget-content ui-corner-all" id="themeswitcher-div" style="width:152px;margin-bottom:10px;">
+                </div>
+                <form>
+                    <input class="settings-checkbox" type="checkbox" name="appwidth" value="appwidth" id="checkbox-01" /><span class="settings-label" id="appwidth">__MSG_appwidth__</span> <br>
+                    <input class="settings-checkbox" type="checkbox" name="loadgame" value="loadgame" id="checkbox-03" /><span class="settings-label" id="lastgame">__MSG_lastgame__</span> <br>
+                </form>
+            </div>
+        </div>
+        <div id="fav-help-dialog"></div>
+        <div id="please-remove-dialog">
+            <span style="display:block;text-align:center;margin-top:20px;margin-bottom:15px;">Game not added.<br>&nbsp;<br>Please first remove a game to add another one.</span>
+        </div>
+        <div id="update-confirm-dialog"></div>
+        <div id="message-confirm-dialog"></div>
+        <div id="dialog-confirm" title="__MSG_dialogtitle__">
+            <span style="display:block;text-align:center;margin-top:10px;margin-bottom:10px;"><span class="ui-icon ui-icon-circle-check" style="float:left;position:relative;top:-1px;left:10px;"></span>__MSG_dialogtext__</span>
+            <div id="dialog-title-div"></div>
+        </div>
+        <div id="dialog-form" title="My game">
+            <form>
+                <label for="gameswf">Paste game swf url</label>
+                <input type="text" name="gameswf" id="gameswf" class="text ui-widget-content ui-corner-all" />
+            </form>
+            <span id="swf-example">e.g.  http://www.example.com/games/game.swf</span>
+        </div>
+    <!--/dialogs-->
+</div><!--/app-container-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://madalin-games.googlecode.com/svn/trunk/ork/mg-hs/js/all-jq-plugins.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function loadDefaultGame() {
+        var title, description;
+        
+        title = "__MSG_gameTitle__";
+        description = "__MSG_description__";
+        
+        $('#gametd').html('<embed class="embedgame" src="__MSG_gameSource__" type="application/x-shockwave-flash" width="100%" height="100%"></embed>');
+        
+        $('.game-title').html('<a class="title-link" href="__MSG_gameSource__" target="_blank">' + title + '</a>');
+        $('.game-description').html("<b>Description:</b>&nbsp;__MSG_description__ <br><b>How to Play:</b>&nbsp;__MSG_howtoplay__");
+        
+        $('#game-info').css({ visibility:'visible' });
+
+    }
+    $(function(){
+        $('#themeswitcher-div').themeswitcher({
+            initialText: '__MSG_initialText__',
+            buttonPreText: '__MSG_buttonPreText__ ',
+            loadTheme: 'Flick'
+          });
+    });
+</script>
+<script src="http://sites.google.com/site/onlinegames01org/sp-site-yt.js?attredirects=0&d=1" type="text/javascript"></script>
+
+<script src="http://hosting.gmodules.com/ig/gadgets/file/105248247525528779537/settings-jquery-themeswitcher.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $.contextMenu({
+            selector: '.thumb',
+            appendTo: '#app-container',
+            items: {
+                "reload": {name: "Reload", callback: function(key, opt){ window.location.reload(); }},
+                "settings": {name: "Settings", callback: function(key, opt){ openSettingsDialog(); }},
+                "sep1": "---------",
+                "delappdata": {name: "Delete appdata", callback: function(key, opt){ deleteAllAppdata(); }}
+            }
+        });
+        $.contextMenu({
+            selector: '.ui-icon-info',
+            appendTo: '#app-container',
+            items: {
+                "reload": {name: "Reload", callback: function(key, opt){ window.location.reload(); }},
+                "settings": {name: "Settings", callback: function(key, opt){ openSettingsDialog(); }},
+                "sep1": "---------",
+                "delappdata": {name: "Delete appdata", callback: function(key, opt){ deleteAllAppdata(); }}
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-23521479-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+  ]]>
+</Content>
+</Module>
