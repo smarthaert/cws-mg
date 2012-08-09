@@ -4,88 +4,240 @@
 <title>My Videos</title>
 <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/themes/base/jquery-ui.css" />
 <style>
-body {
-    margin: 0;
-    padding: 20px 10px 0 10px;
-    font-family:Helvetica, Arial, sans-serif;
-    font-weight:bold;
-    color: #333333;
-}
-#yt-container {
-    text-align: center;
-}
-#playerContainer {
-    width: 500px;
-    height: 310px;
-    margin: auto;
-}
-#videos {
-    width: 720px;
-    height: 360px;
-    overflow-y: scroll;
-    margin: auto;
-}
-.titlec {
-    font-size: 70%;
-    line-height: 80%;
-}
-ul.videos li {
-  float: left;
-  width: 170px;
-  height: 125px;
-  margin-bottom: 1em;
-  cursor: pointer;
-}
-ul.videos
-{
-    margin-top: 0em;
-  margin-bottom: 1em;
-  padding-left : 0em;
-  margin-left: 0em;
-  list-style: none;
-}
+	body {
+	    margin: 0;
+	    padding: 10px 10px 0 10px;
+	    font-family:Helvetica, Arial, sans-serif;
+	    font-weight:bold;
+	    color: #333333;
+	}
+	
+	/* yt-container */
+	#yt-container {
+	    text-align: center;
+	}
+	#playerContainer {
+	    width: 500px;
+	    height: 310px;
+	    margin: auto;
+	}
+	#videos {
+	    width: 720px;
+	    height: 360px;
+	    overflow-y: scroll;
+	    margin: auto;
+	}
+	.titlec {
+	    font-size: 11px;
+	}
+	ul.videos li {
+	  float: left;
+	  width: 170px;
+	  height: 130px;
+	  margin-bottom: 14px;
+	  cursor: pointer;
+	}
+	ul.videos
+	{
+	  margin-top: 0em;
+	  margin-bottom: 1em;
+	  padding-left : 0em;
+	  margin-left: 0em;
+	  list-style: none;
+	}
+	
+	
+	/* searchForm */
+    #searchForm-container {
+        width:265px;
+        height:38px;
+        margin:0 auto;
+        margin-bottom:15px;
+        position:relative;
+        left: 200px;
+    }
+    #main-div-form {
+        width:240px;
+        position:absolute;
+        margin:0;
+    }
+    #searchForm fieldset {
+        width:240px;
+        position:relative;
+        display:block;
+        border:0;
+    }
+    div.input {
+        width:208px;
+        padding:4px 15px 4px 15px;
+        border-radius:20px;
+        border:1px solid #c6d2db;
+        border-top:1px solid #b4c1cb;
+        box-shadow:inset 0 1px 2px rgba(0,0,0,0.08);
+        float:right;
+        background:#e8edf1;
+    }
+    div.input.focus {
+        border:1px solid #9ecbe2;
+        box-shadow:0 0 6px #abdcff, inset 0 1px 2px rgba(0,0,0,0.08);
+    }
+    input#s {
+        width:100%;
+        border:0;
+        border-radius:20px;
+        background:transparent;
+        height:16px;
+        color:#b4bdc4;
+        text-shadow:0 1px 1px #fff;
+    }
+    input#s:focus {
+        outline:none
+    }
+    input#searchSubmit {
+        width:19px;
+        height:19px;
+        text-indent:-9999px;
+        overflow:hidden;
+        background:url(http://madalin-games.googlecode.com/svn/trunk/ork/mochi/css-img/search-icon.png) no-repeat;
+        border:0;
+        position:absolute;
+        top: 11px; 
+        right: 18px;
+        z-index:5;
+        display:none;
+        cursor:pointer;
+    }
+	
+	
 </style>
-<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-function loadVideo(playerUrl, autoplay) {
-  swfobject.embedSWF(
-      playerUrl + '&rel=1&border=0&fs=1&autoplay=' + 
-      (autoplay?1:0), 'player', '500', '280', '9.0.0', false, 
-      false, {allowfullscreen: 'true'});
-}
-
-function showMyVideos(data) {
-  var feed = data.feed;
-  var entries = feed.entry || [];
-  var html = ['<ul class="videos">'];
-  for (var i = 0; i < entries.length; i++) {
-    var entry = entries[i];
-    var title = entry.title.$t.substr(0, 20);
-    var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
-    var playerUrl = entries[i].media$group.media$content[0].url;
-    html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
-              '<img src="', 
-              thumbnailUrl, '" width="130" height="97"/><br /><span class="titlec">', title, '...</span>', '</span></li>');
-  }
-  html.push('</ul><br style="clear: left;"/>');
-  document.getElementById('videos').innerHTML = html.join('');
-  if (entries.length > 0) {
-    loadVideo(entries[0].media$group.media$content[0].url, false);
-  }
-}
-</script>
 </head>
 <body>
-<div id="yt-container">
-    <div id="playerContainer">
-        <object id="player"></object>
+    <div id="searchForm-container">
+        <div id="main-div-form">
+            <form id="searchForm" action="javascript:searchVideos();">
+                <fieldset id="form-fieldset">
+                    <div class="input">
+                        <input type="text" name="s" id="s" value="buscar" autocomplete="off" />
+                    </div>
+                    <input type="submit" id="searchSubmit" value="search" />
+                </fieldset>
+            </form>
+        </div>
     </div>
-    <div id="videos"></div>
-</div>
+    <div id="yt-container">
+        <div id="playerContainer">
+            <object id="player"></object>
+        </div>
+        <div id="videos"></div>
+    </div>
+
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	
+	// functions
+	function loadVideo(playerUrl, autoplay) {
+	  swfobject.embedSWF(
+		  playerUrl + '&rel=1&border=0&fs=1&autoplay=' + 
+		  (autoplay?1:0), 'player', '500', '280', '9.0.0', false, 
+		  false, {allowfullscreen: 'true'});
+	}
+	function showMyVideos(data) {
+	  var feed = data.feed;
+	  var entries = feed.entry || [];
+	  var html = ['<ul class="videos">'];
+	  for (var i = 0; i < entries.length; i++) {
+		var entry = entries[i];
+		var title = entry.title.$t.substr(0, 20);
+		var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
+		var playerUrl = entries[i].media$group.media$content[0].url;
+		html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
+				  '<img src="', 
+				  thumbnailUrl, '" width="130" height="97"/><br /><span class="titlec">', title, '...</span>', '</span></li>');
+	  }
+	  html.push('</ul><br style="clear: left;"/>');
+	  document.getElementById('videos').innerHTML = html.join('');
+	  if (entries.length > 0) {
+		loadVideo(entries[0].media$group.media$content[0].url, false);
+	  }
+	}
+    function searchVideos() {
+        var txt = $('input#s').val();
+        $.getScript('http://gdata.youtube.com/feeds/api/videos?q='+txt+'&alt=json-in-script&callback=showMyVideos&start-index=1&max-results=50&v=2', function() {});
+    }
+
+	// document.ready
+	$(function () {
+	        
+	  //  searchForm script
+	    
+		var input = $('input#s');
+		var divInput = $('div.input');
+		var width = divInput.width();
+		var outerWidth = divInput.parent().width() - (divInput.outerWidth() - width) - 28;
+		var submit = $('#searchSubmit');
+		var txt = input.val();
+		
+	
+		input.on('focus', function() {
+			if(input.val() === txt) {
+				input.val('');
+			}
+			$(this).animate({color: '#000'}, 300); // text color
+			$(this).parent().animate({
+				width: outerWidth + 'px',
+				backgroundColor: '#fff', // background color
+				paddingRight: '43px'
+			}, 300, function() {
+				if(!(input.val() === '' || input.val() === txt)) {
+					if(!($.browser.msie && $.browser.version < 9)) {
+						submit.fadeIn(300);
+					} else {
+						submit.css({display: 'block'});
+					}
+				}
+			}).addClass('focus');
+		}).on('blur', function() {
+			$(this).animate({color: '#b4bdc4'}, 300); // text color
+			$(this).parent().animate({
+				width: width + 'px',
+				backgroundColor: '#e8edf1', // background color
+				paddingRight: '15px'
+			}, 300, function() {
+				if(input.val() === '') {
+					input.val(txt)
+				}
+			}).removeClass('focus');
+			if(!($.browser.msie && $.browser.version < 9)) {
+				submit.fadeOut(100);
+			} else {
+				submit.css({display: 'none'});
+			}
+		}).keyup(function() {
+			if(input.val() === '') {
+				if(!($.browser.msie && $.browser.version < 9)) {
+					submit.fadeOut(300);
+				} else {
+					submit.css({display: 'none'});
+				}
+			} else {
+				if(!($.browser.msie && $.browser.version < 9)) {
+					submit.fadeIn(300);
+				} else {
+					submit.css({display: 'block'});
+				}
+			}
+		});
+		
+	  //
+	});
+</script>
+
 <script 
     type="text/javascript" 
-    src="http://gdata.youtube.com/feeds/api/standardfeeds/BR/most_popular?time=this_month&alt=json-in-script&callback=showMyVideos&start-index=1&max-results=50&format=5">
+    src="http://gdata.youtube.com/feeds/api/standardfeeds/BR/most_popular?time=this_week&alt=json-in-script&callback=showMyVideos&start-index=1&max-results=50&format=5">
 </script>
 </body>
 </html>
